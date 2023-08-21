@@ -13,11 +13,11 @@ function App() {
       <Route path='/' element={<Home/>}/>
       <Route path='/allgames' element={<AllGames/>}/>
       <Route path='/recentlyadded' element={<RecentlyAdded/>}/>
-      <Route path='/game/:id' element={<Details/>}/>
+      <Route path='/game/452' element={<Details/>}/>
     </Routes>
 
     </>
   )
 }
 
-export default App
+export default App;
