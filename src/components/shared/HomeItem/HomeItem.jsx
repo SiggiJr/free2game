@@ -1,6 +1,7 @@
 const HomeItem = () => {
   return ( 
     <>
+    <h1>HomeItem</h1>
     </>
   );
 }
