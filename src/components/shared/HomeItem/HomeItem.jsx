@@ -8,14 +8,19 @@ const HomeItem = ({game}) => {
         src={game.thumbnail}
         alt=""
       />
-      <div>{game.title}</div>
-      <div>{game.short_description}</div>
+      <div className={style.home_item_title}>{game.title}</div>
+      <div className={style.home_item_short_description}>
+        {game.short_description}
+      </div>
       <Button
+        className={style.home_item_button}
         title={"Read More"}
         path={`game/${game.id}`}
       />
-      <a>{game.platform}</a>
-      <a>{game.genre}</a>
+      <div>
+        <a>{game.platform}</a>
+        <a>{game.genre}</a>
+      </div>
     </section>
   );
 };
