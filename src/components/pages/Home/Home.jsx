@@ -3,6 +3,7 @@ import {data} from '../../../assets/utils/data/data.js'
 import ListItem from '../../shared/ListItem/ListItem';
 import HomeItem from '../../shared/HomeItem/HomeItem';
 import Button from '../../shared/Button/Button';
+import gridStyle from '../../../modules/Grid.module.scss'
 
 const Home = () => {
   const recentlyAddedData = data.filter((game, index) => index < 4)
@@ -19,10 +20,13 @@ const Home = () => {
         <h3>
           Recently Added
         </h3>
-        <div className={styles.grid_container}>
-          {recentlyAddedData.map(game => <HomeItem key={crypto.randomUUID()}/>)}
+        <div className={gridStyle["list-wrapper"]}>
+          {recentlyAddedData.map(game => <HomeItem key={game.id} game={game}/>)}
         </div>
         <Button title={"SHOW MORE"} path={"recentlyadded"}/>
+      </section>
+      <section className={styles.test}>
+        {recentlyAddedData.map(game => <ListItem key={game.id} game={game}/>)}
       </section>
     </section>
   );
