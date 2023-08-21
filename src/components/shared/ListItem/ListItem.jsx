@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react";
-import { data } from "../../../assets/utils/data/data";
 import Button from "../Button/Button";
 
-const ListItem = () => {
+const ListItem = ({game}) => {
+  const [gameItems, setGameItems] = useState();
+  console.log(game);
+
   return (
     <section>
       <img
-        src={data[0].thumbnail}
+        src={game.thumbnail}
         alt=""
       />
-      <div>{data[0].title}</div>
+      <div>{game.title}</div>
       <Button
         title={"Read More"}
-        path={`game/${data[0].id}`}
+        path={`game/${game.id}`}
       />
-      <a>{data[0].platform}</a>
-      <a>{data[0].genre}</a>
+      <a>{game.platform}</a>
+      <a>{game.genre}</a>
     </section>
   );
 };
