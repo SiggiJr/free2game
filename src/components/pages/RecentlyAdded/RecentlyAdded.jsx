@@ -15,18 +15,16 @@ const RecentlyAdded = () => {
       <header className={styles.hero}>
         <h1>Recently Added</h1>
       </header>
-      <Button title={"Back to Home"} path={`/`} />
+
+      <Button title={"Back to Home"} path={``} />
+      
       <div className={gridStyle["list-wrapper"]}>
         {data.map((game) => {
           return (
             <ListItem
               key={game.id}
-              data={game}
+              game={game}
             />
-            //   <article>
-            //   <h3>{game.title}</h3>
-            //   <p>{game.genre}</p>
-            // </article>
           )
         })}
       </div>

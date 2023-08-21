@@ -15,7 +15,9 @@ const AllGames = () => {
       <header className={styles.hero}>
         <h1>All Games</h1>
       </header>
-      <Button title={"Back to Home"} path={`/`} />
+
+      <Button title={"Back to Home"} path={``} />
+
       <div className={styles["list-controls"]}>
 
       </div>
@@ -24,12 +26,8 @@ const AllGames = () => {
           return (
             <ListItem
               key={game.id}
-              data={game}
+              game={game}
             />
-            // <article>
-            //   <h3>{game.title}</h3>
-            //   <p>{game.genre}</p>
-            // </article>
           )
         })}
       </div>
