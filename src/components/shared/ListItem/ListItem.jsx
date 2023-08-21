@@ -18,8 +18,6 @@ const ListItem = ({game}) => {
       />
       <a>{game.platform}</a>
       <a>{game.genre}</a>
-      {/* publisher muss durch den "sci-fi"-key ersetzt werden! weiss aktuell nicht den key der "sci-fi" ausgibt!*/}
-      {/* <a>{data[0].publisher}</a> */}
     </section>
   );
 };
