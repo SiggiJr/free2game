@@ -8,7 +8,7 @@ import gridStyle from '../../../modules/Grid.module.scss'
 
 const RecentlyAdded = () => {
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <section className={styles["recently-added"]}>

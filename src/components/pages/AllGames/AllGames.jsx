@@ -8,7 +8,7 @@ import gridStyle from '../../../modules/Grid.module.scss'
 
 const AllGames = () => {
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <section className={styles["all-games"]}>
