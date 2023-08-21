@@ -1,8 +1,23 @@
 .home_item {
   background-color: #102130;
   width: 285px;
+  border-radius: 25px;
 }
 
 .home_item img {
   border-radius: 25px;
+}
+
+.home_item_title {
+  color: #fff;
+  font-family: oswald;
+}
+
+.home_item_short_description {
+  color: #afc7df;
+  font-family: titilliumWeb;
+}
+
+.home_item_button {
+  padding-left: 2rem;
 }
