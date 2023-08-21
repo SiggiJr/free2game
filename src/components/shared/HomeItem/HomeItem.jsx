@@ -1,26 +1,25 @@
-import { data } from "../../../assets/utils/data/data";
 import Button from "../Button/Button";
 import style from "./HomeItem.module.scss";
 
-const HomeItem = () => {
+const HomeItem = ({game}) => {
   return (
     <section className={style.home_item}>
       <img
-        src={data[0].thumbnail}
+        src={game.thumbnail}
         alt=""
       />
-      <div className={style.home_item_title}>{data[0].title}</div>
+      <div className={style.home_item_title}>{game.title}</div>
       <div className={style.home_item_short_description}>
-        {data[0].short_description}
+        {game.short_description}
       </div>
       <Button
         className={style.home_item_button}
         title={"Read More"}
-        path={`game/${data[0].id}`}
+        path={`game/${game.id}`}
       />
       <div>
-        <a>{data[0].platform}</a>
-        <a>{data[0].genre}</a>
+        <a>{game.platform}</a>
+        <a>{game.genre}</a>
       </div>
     </section>
   );
