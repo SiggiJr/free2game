@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { data } from '../../../assets/utils/data/data.js'
 
 import ListItem from '../../shared/ListItem/ListItem.jsx'
@@ -8,7 +9,19 @@ import gridStyle from '../../../modules/Grid.module.scss'
 
 const RecentlyAdded = () => {
 
-  // console.log(data);
+  const [games, setGames] = useState([]);
+
+  // const fetchURL = 
+
+  // useEffect(() => {
+  //   fetch(fetchURL)
+  //     .then((response) => {
+  //       if(!response.ok) throw new Error(`recently added fetch failed ${response.statusText}`);
+  //       return response.json();
+  //     })
+  //     .then(gameData => setGames(gameData))
+  //     .catch((error) => console.error(error.message));
+  // }, [])
 
   return (
     <section className={styles["recently-added"]}>
@@ -19,6 +32,7 @@ const RecentlyAdded = () => {
       <Button title={"Back to Home"} path={``} />
       
       <div className={gridStyle["list-wrapper"]}>
+        {/* {games.map((game) => { */}
         {data.map((game) => {
           return (
             <ListItem
