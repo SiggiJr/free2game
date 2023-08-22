@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 
 const ListItem = ({game}) => {
   const [gameItems, setGameItems] = useState();
-  console.log(game);
+  // console.log(game);
 
   return (
     <section>
