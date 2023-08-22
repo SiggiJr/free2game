@@ -29,19 +29,19 @@ const Details = () => {
   return (
     <section className={styles.details}>
       <header>
-        <img
-          className={styles.img}
-          src={details.screenshots[0].image}
+        <img className={styles.img_hero} 
+          src={details.screenshots[0].image} 
           alt={details.title}
         />
       </header>
       <div className={styles.details_div}>
-        <article className={styles.main}>
+          <article className={styles.main_art}>
           <h2>{details.title}</h2>
-          <img
-            src={details.thumbnail}
-            alt={details.title}
-          />
+          </article>
+        <article className={styles.main}>
+          <img className={styles.img_thumb}
+          src={details.thumbnail} 
+          alt={details.title}/>
           <h3>Platform:{details.platform}</h3>
           <p>{details.genre}</p>
           <button className={styles.btn}>PLAY NOW</button>
@@ -53,15 +53,17 @@ const Details = () => {
         </article>
 
         <article className={styles.info}>
-          <img
-            src={details.screenshots[1].image}
-            alt={details.title}
+          <img className={styles.img_left}
+          src={details.screenshots[1].image}
+          alt={details.title}
           />
           <h3>Additional Information</h3>
           <p>{details.short_description}</p>
           <div className={styles.info_div}>
+            <div className={styles.dev_div}>
             <h4>Developer</h4>
             <p>{details.developer}</p>
+            </div>
 
             <h4>Publisher</h4>
             <p>{details.publisher}</p>
@@ -72,15 +74,14 @@ const Details = () => {
         </article>
 
         <article className={styles.system}>
-          <img
-            src={details.screenshots[2].image}
-            alt={details.title}
+          <img className={styles.img_right}
+          src={details.screenshots[2].image}
+          alt={details.title}
           />
           <h3>Minimum System Requirements</h3>
-          <div className={styles.sytsem_div_left}>
-            <h4>OS</h4>
-            <p>{details.platform}</p>
-
+          <div className={styles.system_div_left}>
+          <h4>OS</h4>
+          <p>{details.platform}</p>
             <h4>Memory</h4>
             <p>{details.memory}</p>
 
