@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from 'react'
-import { data } from '../../../assets/utils/data/data.js'
 
 import ListItem from '../../shared/ListItem/ListItem';
 import Button from '../../shared/Button/Button.jsx'
@@ -16,18 +15,6 @@ const AllGames = () => {
   const [genre, setGenre] = useState("")
   const [sortBy, setSortBy] = useState("")
   const {filter, setFilter} = useContext(FilterContext)
-
-  // const fetchURL = 
-
-  // useEffect(() => {
-  //   fetch(fetchURL)
-  //     .then((response) => {
-  //       if(!response.ok) throw new Error(`recently added fetch failed ${response.statusText}`);
-  //       return response.json();
-  //     })
-  //     .then(gameData => setGames(gameData))
-  //     .catch((error) => console.error(error.message));
-  // }, [])
 
   console.log(filter);
 
@@ -62,11 +49,11 @@ const AllGames = () => {
 
       <div className={styles["list-controls"]}>
         <select name="platform" id="platform" onChange={(event) => handlePlatform(event)}>
-          <option value="platform=all">All Platforms</option>
+          <option value="platform=all">ALL PLATFORMS</option>
           <option value="platform=pc">Windows (PC)</option>
           <option value="platform=browser">Browser(Web)</option>
         </select>
-        <select name="genre" id="genre" onLoad={event => console.log(event.target.value)} onChange={(event) => handleGenre(event)}>
+        <select name="genre" id="genre" onChange={(event) => handleGenre(event)}>
           <option value="">GENRE/TAG</option>
           <option value="category=mmorpg">MMORPG</option>
           <option value="category=shooter">Shooter</option>
@@ -88,7 +75,6 @@ const AllGames = () => {
       
       <div className={gridStyle["list-wrapper"]}>
         {games.map((game) => {
-        // {data.map((game) => {
           return (
             <ListItem
               key={game.id}

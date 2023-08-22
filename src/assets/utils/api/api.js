@@ -9,10 +9,12 @@ const options = {
 };
 
 export const getGamesByFilter = (filter) => {
-  return fetch(`${apiLink}?${filter}`, options).then((response) => {
-    if (!response.ok) {
-      throw new Error("Fetch ist Fehlgeschlagen");
-    }
-    return response.json();
-  });
+  return (
+    fetch(`${apiLink}?${filter}`, options)
+      .then((response) => {
+        if (!response.ok) throw new Error(`Fetch failed: ${response.statusText}`);
+        return response.json();
+      })
+      .catch((error) => console.error(error.message))
+  );
 };
