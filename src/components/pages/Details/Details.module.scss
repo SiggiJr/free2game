@@ -6,30 +6,51 @@
     font-family: TitilliumWeb;
     src: url(../../../assets/fonts/TitilliumWeb/TitilliumWeb-Regular.ttf);
 }
+
+article{
+    border: 1px solid green;
+}
+
 .details {
     background-color: #040F14;
     color: white;
     font-family: Oswald;
-    width: 1440px;
-    height: 2583px;
+    // max-width: 1440px;
+    max-width: 95vw;
+    margin-left: 5vw;
+    // height: 2583px;
     
     header {
-        margin-left: 24px;
-        margin-right: 24px;
-        padding: 64px;
-        width: 100%;
+    border: 1px solid red;
+        // margin-left: 24px;
+        // margin-right: 24px;
+        padding-inline: 24px;
+        // padding: 64px;
+        // width: 100%;
 
         .img_hero {
             border-radius: 24px;
             height: 491px;
             width: 1318px;
+            object-fit: cover;
+            object-position: center;
         }
     }
     .details_div {
+        margin-right: 74px;
+        margin-left: 80px;
+        border: 1px solid red;
         display: grid;
-        grid-gap: 25px;
-        grid-template-columns: 800px 800px;
-        grid-template-rows: 450px 450px 450px;
+        column-gap: 25px;
+        row-gap: 96px;
+        // grid-gap: 25px;
+        // grid-template-columns: 800px 800px;
+        // grid-template-rows: 450px 450px 450px;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+
+        .general_informations{
+            padding-left: 24px;
+        }
 
         h2 {
             font-size: 24px;
@@ -48,39 +69,58 @@
         }
 
         .main_art {
-            grid-column: 1/2;
-            grid-row: 1;
+            // grid-column: 1/2;
+            // grid-row: 1;
 
+        }
+        .main {
+            // grid-column: 1/2;
+            // grid-row: 2;
+            // margin: 48px 154px;
+            // margin-left: 80px;
+            margin-top: 96px;
             h2 {
+                margin-bottom: 48px;
                 font-size: 48px;
                 font-style: normal;
                 font-weight: 700;
                 line-height: 120%;
                 text-transform: uppercase;
-
-                padding: 48px 150px;
+                // padding: 48px 150px;
             }
-        }
-        .main {
-            grid-column: 1/2;
-            grid-row: 2;
-            margin: 48px 154px;
-
             .img_thumb {
                 border-radius: 24px;
-                height: 281px;
-                width: 491px;
+                // height: 281px;
+                max-width: 491px;
+                object-fit: contain;
+                object-position: center;
+            }
+            h3{
+                margin-top: 36px;
+                margin-bottom: 24px;
+            }
+            .genre{
+                background-color: #102130;
+                padding: 6px 12px;
+                border: 1px solid #ffe81e;
+                // display: inline-block;
+                width: fit-content;
+                border-radius: 15px;
+                font-size: 1rem;
+                margin-bottom: 36px;
             }
         }
         .about {
-            grid-column: 2/3;
-            grid-row: 2;
+            margin-top: 214px;
+            // grid-column: 2/3;
+            // grid-row: 2;
         
             h3 {
                 font-size: 24px;
                 font-style: normal;
                 font-weight: 700;
-                line-height: normal;    
+                line-height: normal; 
+                margin-bottom: 36px;   
             }
             p {
                 font-family: TitilliumWeb;
@@ -91,28 +131,27 @@
                 width: 443px;
             }
         }
+
+        .img{
+            border-radius: 24px;
+        }
+
         .info {
-            grid-column: 1/2;
-            grid-row: 3;
-            margin-left: 154px;
-
-            .dev_div {
-                display: flex;
-
+            .short_description{
+                margin-top: 36px;
+                margin-bottom: 24px;
             }
-                .img_left {
-                    border-radius: 24px;
-                    width: 594px;
-                    height: 356px;
-                }
-                h3 {
-                    margin-top: 50px;
-                }
+            .info_div{
+                display: grid;
+                grid-template-columns: 1fr 3fr;
+                column-gap: 24px;
+            }
                 h4 {
                     font-size: 18px;
                     font-style: normal;
                     font-weight: 700;
                     line-height: 120%;
+                    border: 1px solid blue;
                 }
                 p {
                     font-family: TitilliumWeb;
@@ -120,17 +159,14 @@
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
+                    border: 1px solid blue;
+
                 }
         }
         .system {
-            grid-column: 3/-2;
-            grid-row: 3;
+            // grid-column: 3/-2;
+            // grid-row: 3;
 
-            .img_right {
-                border-radius: 24px;
-                width: 594px;
-                height: 356px;
-            }
             h3 {
                 margin-top: 50px;
             }
