@@ -28,6 +28,7 @@
 .list_item_filter {
   margin: 2rem 0 2rem 2rem;
   display: flex;
+  align-items: center;
   gap: 8px;
 }
 
@@ -35,14 +36,15 @@
   color: #fff;
   border-radius: 15px;
   border: #ffe81e 1px solid;
-  padding: 1rem;
+  padding: 16px;
 }
 
 .list_item_genre {
   color: #fff;
   border-radius: 15px;
   border: #ffe81e 1px solid;
-  padding: 0.5rem;
+  padding: 11px;
   font-family: oswald;
   font-weight: 500;
+  align-items: baseline;
 }

@@ -1,8 +1,9 @@
 .nav {
   background-color: #040f14;
   height: 100%;
-  max-width: 5vw;
+  width: 5vw;
   position: fixed;
+  transition: 0.5s;
 }
 
 .nav_icons {
@@ -15,10 +16,18 @@
     flex-direction: column;
     gap: 3rem;
     margin: auto;
+
+    img:hover {
+      background-color: hsla(54, 100%, 56%, 0.253);
+      border-radius: 15px;
+    }
   }
 }
 
-.nav_icons_home:active {
+.active {
   background-color: #ffe81e;
   border-radius: 15px;
+}
+
+.nav_icons_inactive {
 }
