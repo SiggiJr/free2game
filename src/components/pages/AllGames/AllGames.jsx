@@ -52,10 +52,6 @@ const AllGames = () => {
 
   setFilter(`${platform}&${genre}&${sortBy}`)
 
-  // if (genre !== "") {
-  //   setFilter(prevFilter => `${prevFilter}&${genre}`)
-  // }
-
   return (
     <section className={styles["all-games"]}>
       <header className={styles.hero}>
