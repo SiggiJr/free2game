@@ -1,0 +1,48 @@
+.list_item {
+  background-color: #102130;
+  width: 285px;
+  border-radius: 25px;
+}
+
+.list_item_img {
+  border-radius: 25px;
+  margin-bottom: 2rem;
+}
+
+.list_item_title {
+  color: #fff;
+  font-family: oswald;
+  padding: 0 2rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  height: 3rem;
+}
+
+.list_item_button {
+  margin: 0 2rem;
+  padding-bottom: 3rem;
+  border-bottom: #ffffff33 solid 2px;
+}
+
+.list_item_filter {
+  margin: 2rem 0 2rem 2rem;
+  display: flex;
+  gap: 8px;
+}
+
+.list_item_platform {
+  color: #fff;
+  border-radius: 15px;
+  border: #ffe81e 1px solid;
+  padding: 1rem;
+}
+
+.list_item_genre {
+  color: #fff;
+  border-radius: 15px;
+  border: #ffe81e 1px solid;
+  padding: 0.5rem;
+  font-family: oswald;
+  font-weight: 500;
+}

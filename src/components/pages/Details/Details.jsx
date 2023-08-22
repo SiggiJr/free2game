@@ -1,10 +1,9 @@
-import styles from './Details.module.scss';
-import { useEffect, useState } from 'react';
+import styles from "./Details.module.scss";
+import { useEffect, useState } from "react";
 //import { useParams } from 'react';
-import { data2 } from '../../../assets/utils/data/data.js';
+import { data2 } from "../../../assets/utils/data/data.js";
 
 const Details = () => {
-
   const [details, setDetails] = useState(data2);
   const [isLoading, setIsLoading] = useState(true);
   //const detailsId = useParams().id;
@@ -26,7 +25,7 @@ const Details = () => {
   // if(isLoading) {
   //   return <p>Loading...</p>
   // }
-console.log(details);
+  // console.log(details);
   return (
     <section className={styles.details}>
       <header>
@@ -45,9 +44,7 @@ console.log(details);
           alt={details.title}/>
           <h3>Platform:{details.platform}</h3>
           <p>{details.genre}</p>
-          <button className={styles.btn}>
-            PLAY NOW
-          </button>
+          <button className={styles.btn}>PLAY NOW</button>
         </article>
 
         <article className={styles.about}>
@@ -85,28 +82,27 @@ console.log(details);
           <div className={styles.system_div_left}>
           <h4>OS</h4>
           <p>{details.platform}</p>
+            <h4>Memory</h4>
+            <p>{details.memory}</p>
 
-          <h4>Memory</h4>
-          <p>{details.memory}</p>
-
-          <h4>Storage</h4>
-          <p>{details.storage}</p>
+            <h4>Storage</h4>
+            <p>{details.storage}</p>
           </div>
 
           <div className={styles.system_div_right}>
-          <h4>Processor</h4>
-          <p>{details.processor}</p>
+            <h4>Processor</h4>
+            <p>{details.processor}</p>
 
-          <h4>Graphics</h4>
-          <p>{details.graphics}</p>
+            <h4>Graphics</h4>
+            <p>{details.graphics}</p>
 
-          <h4>Additional Notes</h4>
-          <p>Specifications may change during development</p>
+            <h4>Additional Notes</h4>
+            <p>Specifications may change during development</p>
           </div>
         </article>
       </div>
     </section>
   );
-}
+};
 
 export default Details;

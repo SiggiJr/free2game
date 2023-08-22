@@ -6,6 +6,7 @@ import RecentlyAdded from "./components/pages/RecentlyAdded/RecentlyAdded";
 import Details from "./components/pages/Details/Details";
 import ListItem from "./components/shared/ListItem/ListItem";
 import HomeItem from "./components/shared/HomeItem/HomeItem";
+import Navbar from "./components/shared/Navbar/Navbar";
 import { createContext, useState } from "react";
 
 export const FilterContext = createContext()
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
     <FilterContext.Provider value={{filter, setFilter}}>
+    <Navbar />
       <Routes>
         <Route
           path="/"
@@ -39,7 +41,7 @@ function App() {
         <Route
           path="/homeitem"
           element={<HomeItem />}
-          />
+        />
       </Routes>
           </FilterContext.Provider>
     </>

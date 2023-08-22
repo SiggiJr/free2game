@@ -7,7 +7,7 @@ import gridStyle from '../../../modules/Grid.module.scss'
 import { useEffect, useState } from 'react';
 
 const Home = () => {
-  const recentlyAddedData = data.filter((game, index) => index < 4)
+  const recentlyAddedData = data.filter((game, index) => index < 4);
 
   // const [games, setGames] = useState([])
 
@@ -60,17 +60,19 @@ const Home = () => {
   // console.log(recentlyAddedData);
   return ( 
     <section className={styles.home}>
+      <Navbar />
       <header>
-        <h1>
-        Find & track the best free-to-play games!
-        </h1>
+        <h1>Find & track the best free-to-play games!</h1>
       </header>
       <section className={styles.recently_added}>
-        <h3>
-          Recently Added
-        </h3>
+        <h3>Recently Added</h3>
         <div className={gridStyle["list-wrapper"]}>
-          {recentlyAddedData.map(game => <HomeItem key={game.id} game={game}/>)}
+          {recentlyAddedData.map((game) => (
+            <HomeItem
+              key={game.id}
+              game={game}
+            />
+          ))}
         </div>
         <Button title={"SHOW MORE"} path={"recentlyadded"} filterByButton={"sorty-by=release-date"}/>
       </section>
@@ -90,6 +92,6 @@ const Home = () => {
       </section>
     </section>
   );
-}
+};
 
 export default Home;

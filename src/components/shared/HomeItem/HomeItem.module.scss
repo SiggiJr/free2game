@@ -4,20 +4,54 @@
   border-radius: 25px;
 }
 
-.home_item img {
+.home_item_img {
   border-radius: 25px;
+  margin-bottom: 2rem;
 }
 
 .home_item_title {
   color: #fff;
   font-family: oswald;
+  padding: 0 2rem;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .home_item_short_description {
   color: #afc7df;
   font-family: titilliumWeb;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .home_item_button {
-  padding-left: 2rem;
+  margin: 0 2rem;
+  padding-bottom: 3rem;
+  border-bottom: #ffffff33 solid 2px;
+}
+
+.home_item_filter {
+  margin: 2rem 0 2rem 2rem;
+  display: flex;
+  gap: 8px;
+}
+
+.home_item_platform {
+  color: #fff;
+  border-radius: 15px;
+  border: #ffe81e 1px solid;
+  padding: 1rem;
+}
+
+.home_item_genre {
+  color: #fff;
+  border-radius: 15px;
+  border: #ffe81e 1px solid;
+  padding: 0.5rem;
+  font-family: oswald;
+  font-weight: 500;
 }
