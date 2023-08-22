@@ -50,7 +50,7 @@ const Home = () => {
   //     return response.json()
   //   })
   //   .then(gamesData => setGames(gamesData))
-  //   .catch(error => console.log(error.message))
+  //   .catch(error => console.error(error.message))
   // }, [])
 
   const date = new Date()
@@ -72,11 +72,12 @@ const Home = () => {
         <div className={gridStyle["list-wrapper"]}>
           {recentlyAddedData.map(game => <HomeItem key={game.id} game={game}/>)}
         </div>
-        <Button title={"SHOW MORE"} path={"recentlyadded"}/>
+        <Button title={"SHOW MORE"} path={"recentlyadded"} filterByButton={"sorty-by=release-date"}/>
       </section>
       <section className={styles.test}>
+        <h3>Top 4 Games for PC in {date.toLocaleDateString("en-US", {month: "long", year: "numeric"})}</h3>
         {recentlyAddedData.map(game => <ListItem key={game.id} game={game}/>)}
-        <Button title={"SHOW MORE"} path={"allgames"}/>
+        <Button title={"SHOW MORE"} path={"allgames"} filterByButton={"sorty-by=popularity&platform=pc"}/>
       </section>
       <section className="top4_browser_games">
         <h3>
@@ -85,7 +86,7 @@ const Home = () => {
         <div className={gridStyle["list-wrapper"]}>
           {recentlyAddedData.map(game => <ListItem key={game.id} game={game}/>)}
         </div>
-        <Button title={"SHOW MORE"} path={"allgames"}/>
+        <Button title={"SHOW MORE"} path={"allgames"} filterByButton={"sorty-by=popularity&platform=browser"}/>
       </section>
     </section>
   );
