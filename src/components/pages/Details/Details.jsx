@@ -2,6 +2,7 @@ import styles from "./Details.module.scss";
 import { useEffect, useState } from "react";
 //import { useParams } from 'react';
 import { data2 } from "../../../assets/utils/data/data.js";
+import Button from "../../shared/Button/Button";
 
 const Details = () => {
   const [details, setDetails] = useState(data2);
@@ -35,16 +36,19 @@ const Details = () => {
         />
       </header>
       <div className={styles.details_div}>
-          <article className={styles.main_art}>
-          <h2>{details.title}</h2>
-          </article>
+          {/* <article className={styles.main_art}>
+          </article> */}
         <article className={styles.main}>
+          <h2>{details.title}</h2>
           <img className={styles.img_thumb}
           src={details.thumbnail} 
           alt={details.title}/>
-          <h3>Platform:{details.platform}</h3>
-          <p>{details.genre}</p>
-          <button className={styles.btn}>PLAY NOW</button>
+          <div className={styles.general_informations}>
+            <h3>Platform: {details.platform}</h3>
+            <p className={styles.genre}>{details.genre}</p>
+            <Button title={"PLAY NOW"} path={"/"}/>
+          </div>
+          {/* <button className={styles.btn}>PLAY NOW</button> */}
         </article>
 
         <article className={styles.about}>
@@ -52,18 +56,24 @@ const Details = () => {
           <p>{details.description}</p>
         </article>
 
-        <article className={styles.info}>
-          <img className={styles.img_left}
+          <img className={styles.img}
           src={details.screenshots[1].image}
           alt={details.title}
           />
+
+          <img className={styles.img}
+          src={details.screenshots[2].image}
+          alt={details.title}
+          />
+
+        <article className={styles.info}>
           <h3>Additional Information</h3>
-          <p>{details.short_description}</p>
+          <p className={styles.short_description}>{details.short_description}</p>
           <div className={styles.info_div}>
-            <div className={styles.dev_div}>
+            {/* <div className={styles.dev_div}> */}
             <h4>Developer</h4>
             <p>{details.developer}</p>
-            </div>
+            {/* </div> */}
 
             <h4>Publisher</h4>
             <p>{details.publisher}</p>
@@ -74,10 +84,6 @@ const Details = () => {
         </article>
 
         <article className={styles.system}>
-          <img className={styles.img_right}
-          src={details.screenshots[2].image}
-          alt={details.title}
-          />
           <h3>Minimum System Requirements</h3>
           <div className={styles.system_div_left}>
           <h4>OS</h4>
