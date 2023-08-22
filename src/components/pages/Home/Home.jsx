@@ -60,7 +60,6 @@ const Home = () => {
   // console.log(recentlyAddedData);
   return ( 
     <section className={styles.home}>
-      <Navbar />
       <header>
         <h1>Find & track the best free-to-play games!</h1>
       </header>
