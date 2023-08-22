@@ -6,6 +6,7 @@ import RecentlyAdded from "./components/pages/RecentlyAdded/RecentlyAdded";
 import Details from "./components/pages/Details/Details";
 import ListItem from "./components/shared/ListItem/ListItem";
 import HomeItem from "./components/shared/HomeItem/HomeItem";
+import Navbar from "./components/shared/Navbar/Navbar";
 
 function App() {
   return (
@@ -34,6 +35,10 @@ function App() {
         <Route
           path="/homeitem"
           element={<HomeItem />}
+        />
+        <Route
+          path="/navbar"
+          element={<Navbar />}
         />
       </Routes>
     </>

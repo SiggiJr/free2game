@@ -1,10 +1,9 @@
-import styles from './Details.module.scss';
-import { useEffect, useState } from 'react';
+import styles from "./Details.module.scss";
+import { useEffect, useState } from "react";
 //import { useParams } from 'react';
-import { data2 } from '../../../assets/utils/data/data.js';
+import { data2 } from "../../../assets/utils/data/data.js";
 
 const Details = () => {
-
   const [details, setDetails] = useState(data2);
   const [isLoading, setIsLoading] = useState(true);
   //const detailsId = useParams().id;
@@ -26,12 +25,13 @@ const Details = () => {
   // if(isLoading) {
   //   return <p>Loading...</p>
   // }
-console.log(details);
+  // console.log(details);
   return (
     <section className={styles.details}>
       <header>
-        <img className={styles.img} 
-          src={details.screenshots[0].image} 
+        <img
+          className={styles.img}
+          src={details.screenshots[0].image}
           alt={details.title}
         />
       </header>
@@ -39,13 +39,12 @@ console.log(details);
         <article className={styles.main}>
           <h2>{details.title}</h2>
           <img
-          src={details.thumbnail} 
-          alt={details.title}/>
+            src={details.thumbnail}
+            alt={details.title}
+          />
           <h3>Platform:{details.platform}</h3>
           <p>{details.genre}</p>
-          <button className={styles.btn}>
-            PLAY NOW
-          </button>
+          <button className={styles.btn}>PLAY NOW</button>
         </article>
 
         <article className={styles.about}>
@@ -54,9 +53,9 @@ console.log(details);
         </article>
 
         <article className={styles.info}>
-          <img 
-          src={details.screenshots[1].image}
-          alt={details.title}
+          <img
+            src={details.screenshots[1].image}
+            alt={details.title}
           />
           <h3>Additional Information</h3>
           <p>{details.short_description}</p>
@@ -73,36 +72,36 @@ console.log(details);
         </article>
 
         <article className={styles.system}>
-          <img 
-          src={details.screenshots[2].image}
-          alt={details.title}
+          <img
+            src={details.screenshots[2].image}
+            alt={details.title}
           />
           <h3>Minimum System Requirements</h3>
           <div className={styles.sytsem_div_left}>
-          <h4>OS</h4>
-          <p>{details.platform}</p>
+            <h4>OS</h4>
+            <p>{details.platform}</p>
 
-          <h4>Memory</h4>
-          <p>{details.memory}</p>
+            <h4>Memory</h4>
+            <p>{details.memory}</p>
 
-          <h4>Storage</h4>
-          <p>{details.storage}</p>
+            <h4>Storage</h4>
+            <p>{details.storage}</p>
           </div>
 
           <div className={styles.system_div_right}>
-          <h4>Processor</h4>
-          <p>{details.processor}</p>
+            <h4>Processor</h4>
+            <p>{details.processor}</p>
 
-          <h4>Graphics</h4>
-          <p>{details.graphics}</p>
+            <h4>Graphics</h4>
+            <p>{details.graphics}</p>
 
-          <h4>Additional Notes</h4>
-          <p>Specifications may change during development</p>
+            <h4>Additional Notes</h4>
+            <p>Specifications may change during development</p>
           </div>
         </article>
       </div>
     </section>
   );
-}
+};
 
 export default Details;
