@@ -1,0 +1,152 @@
+@font-face {
+    font-family: Oswald;
+    src: url(../../../assets/fonts/Oswald/Oswald-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: TitilliumWeb;
+    src: url(../../../assets/fonts/TitilliumWeb/TitilliumWeb-Regular.ttf);
+}
+.details {
+    background-color: #040F14;
+    color: white;
+    font-family: Oswald;
+    width: 1440px;
+    height: 2583px;
+    
+    header {
+        margin-left: 24px;
+        margin-right: 24px;
+        padding: 64px;
+        width: 100%;
+
+        .img_hero {
+            border-radius: 24px;
+            height: 491px;
+            width: 1318px;
+        }
+    }
+    .details_div {
+        display: grid;
+        grid-gap: 25px;
+        grid-template-columns: 800px 800px;
+        grid-template-rows: 450px 450px 450px;
+
+        h2 {
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;    
+        }
+        p {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+        .btn {
+            background-color: #FF4654;
+        }
+
+        .main_art {
+            grid-column: 1/2;
+            grid-row: 1;
+
+            h2 {
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 120%;
+                text-transform: uppercase;
+
+                padding: 48px 150px;
+            }
+        }
+        .main {
+            grid-column: 1/2;
+            grid-row: 2;
+            margin: 48px 154px;
+
+            .img_thumb {
+                border-radius: 24px;
+                height: 281px;
+                width: 491px;
+            }
+        }
+        .about {
+            grid-column: 2/3;
+            grid-row: 2;
+        
+            h3 {
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;    
+            }
+            p {
+                font-family: TitilliumWeb;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                width: 443px;
+            }
+        }
+        .info {
+            grid-column: 1/2;
+            grid-row: 3;
+            margin-left: 154px;
+
+            .dev_div {
+                display: flex;
+
+            }
+                .img_left {
+                    border-radius: 24px;
+                    width: 594px;
+                    height: 356px;
+                }
+                h3 {
+                    margin-top: 50px;
+                }
+                h4 {
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 120%;
+                }
+                p {
+                    font-family: TitilliumWeb;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+        }
+        .system {
+            grid-column: 3/-2;
+            grid-row: 3;
+
+            .img_right {
+                border-radius: 24px;
+                width: 594px;
+                height: 356px;
+            }
+            h3 {
+                margin-top: 50px;
+            }
+            h4 {
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 120%;
+            }
+            p {
+                font-family: TitilliumWeb;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+    }
+}
