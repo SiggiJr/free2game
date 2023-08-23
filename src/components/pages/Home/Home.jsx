@@ -9,53 +9,8 @@ import { useEffect, useState } from "react";
 const Home = () => {
   const recentlyAddedData = data.filter((game, index) => index < 4);
 
-  // const [games, setGames] = useState([])
-
-  //   const asyncFetch = async () => {
-  //     const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc';
-  // const options = {
-  // 	// method: 'GET',
-  // 	headers: {
-  // 		'X-RapidAPI-Key': '7d3c088315mshaec6b2406b87386p1ee597jsnb8fa3e52af4c',
-  // 		'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-  // 	}
-  // };
-
-  // try {
-  // 	const response = await fetch(url, options);
-  // 	const result = await response.json();
-  // 	console.log(result);
-  //   setGames(result)
-  // } catch (error) {
-  // 	console.error(error);
-  // }
-  //   }
-
-  // useEffect(() => {
-  //   asyncFetch()
-  // }, [])
-
-  // useEffect(() => {
-  //   fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc', {
-  //     // method: 'GET',
-  //     headers: {
-  //       'X-RapidAPI-Key': '7d3c088315mshaec6b2406b87386p1ee597jsnb8fa3e52af4c',
-  //       'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-  //     }
-  //   })
-  //   .then(response => {
-  //     if (!response.ok) {
-  //       throw new Error("Fetch fehlgeschlagen")
-  //     }
-  //     return response.json()
-  //   })
-  //   .then(gamesData => setGames(gamesData))
-  //   .catch(error => console.error(error.message))
-  // }, [])
-
   const date = new Date();
 
-  // console.log(recentlyAddedData);
   return (
     <section className={styles.home}>
       <header>
