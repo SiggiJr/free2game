@@ -38,7 +38,9 @@ const Navbar = () => {
         <div>
           <div onClick={toggleNav}>
             <img
-              className={style.nav_toggle}
+              className={`${style.nav_toggle_icon} ${
+                isNavOpen ? style.close_icon : ""
+              }`}
               src={isNavOpen ? CloseIcon : BurgerIcon}
               alt=""
             />
@@ -54,6 +56,7 @@ const Navbar = () => {
                 src={HomeIcon}
                 alt=""
               />
+              <p>{isNavOpen ? "Home" : ""}</p>
             </NavLink>
             <NavLink
               to={"/allgames"}
@@ -63,6 +66,7 @@ const Navbar = () => {
                 src={AllGamesIcon}
                 alt=""
               />
+              <p>{isNavOpen ? "All Games" : ""}</p>
             </NavLink>
             <NavLink
               to={"/recentlyadded"}
@@ -72,6 +76,7 @@ const Navbar = () => {
                 src={RecentlyAddedIcon}
                 alt=""
               />
+              <p>{isNavOpen ? "Recently Added" : ""}</p>
             </NavLink>
           </div>
         </div>

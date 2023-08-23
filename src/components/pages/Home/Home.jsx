@@ -59,7 +59,7 @@ const Home = () => {
   return (
     <section className={styles.home}>
       <header>
-        <h1>Find & track the best free-to-play games!</h1>
+        <h1>FIND & TRACK THE BEST FREE-TO-PLAY GAMES!</h1>
       </header>
       <section className={styles.recently_added}>
         <h3>Recently Added</h3>
@@ -71,13 +71,15 @@ const Home = () => {
             />
           ))}
         </div>
-        <Button
-          title={"SHOW MORE"}
-          path={"recentlyadded"}
-          filterByButton={"sorty-by=release-date"}
-        />
+        <div className={styles.home_button_align_right}>
+          <Button
+            title={"SHOW MORE"}
+            path={"recentlyadded"}
+            filterByButton={"sorty-by=release-date"}
+          />
+        </div>
       </section>
-      <section className={styles.test}>
+      <section className={styles.top_games_pc}>
         <h3>
           Top 4 Games for PC in{" "}
           {date.toLocaleDateString("en-US", { month: "long", year: "numeric" })}
@@ -88,13 +90,15 @@ const Home = () => {
             game={game}
           />
         ))}
-        <Button
-          title={"SHOW MORE"}
-          path={"allgames"}
-          filterByButton={"sorty-by=popularity&platform=pc"}
-        />
+        <div className={styles.home_button_align_right}>
+          <Button
+            title={"SHOW MORE"}
+            path={"allgames"}
+            filterByButton={"sorty-by=popularity&platform=pc"}
+          />
+        </div>
       </section>
-      <section className="top4_browser_games">
+      <section className={styles.top_games_browser}>
         <h3>
           Top 4 Games for Browser in{" "}
           {date.toLocaleDateString("en-US", { month: "long", year: "numeric" })}
@@ -107,11 +111,13 @@ const Home = () => {
             />
           ))}
         </div>
-        <Button
-          title={"SHOW MORE"}
-          path={"allgames"}
-          filterByButton={"sorty-by=popularity&platform=browser"}
-        />
+        <div className={styles.home_button_align_right}>
+          <Button
+            title={"SHOW MORE"}
+            path={"allgames"}
+            filterByButton={"sorty-by=popularity&platform=browser"}
+          />
+        </div>
       </section>
     </section>
   );
