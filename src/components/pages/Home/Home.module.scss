@@ -1,0 +1,85 @@
+.home {
+  width: 95%;
+  margin-left: 5%;
+  background-color: #040f14;
+
+  header {
+    // margin-top: 64px;
+    background-image: url(../../../assets/img/background_home.png);
+    height: 70vh;
+    object-fit: cover;
+    background-repeat: no-repeat;
+
+    h1 {
+      font-family: oswald;
+      color: #fff;
+      font-weight: 700;
+      font-size: 3rem;
+      width: 35vw;
+      padding: 30vh 0 0 4rem;
+    }
+  }
+
+  .recently_added {
+    margin-bottom: 5rem;
+    h3 {
+      color: #fff;
+      font-size: 1.5rem;
+      font-family: oswald;
+      margin: 2rem 0 3rem 4rem;
+    }
+
+    div {
+      margin-bottom: 2rem;
+    }
+
+    .home_button_align_right {
+      text-align: right;
+    }
+
+    button {
+      margin-right: 4rem;
+    }
+  }
+
+  .top_games_pc {
+    h3 {
+      color: #fff;
+      font-size: 1.5rem;
+      font-family: oswald;
+      margin: 2rem 0 3rem 4rem;
+    }
+
+    .home_top_games_pc_list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home_button_align_right {
+      text-align: right;
+      padding-bottom: 2rem;
+    }
+
+    button {
+      margin-right: 4rem;
+    }
+  }
+
+  .top_games_browser {
+    h3 {
+      color: #fff;
+      font-size: 1.5rem;
+      font-family: oswald;
+      margin: 2rem 0 3rem 4rem;
+    }
+    div {
+      margin-bottom: 2rem;
+    }
+
+    .home_button_align_right {
+      text-align: right;
+      margin-right: 4rem;
+      padding-bottom: 10rem;
+    }
+  }
+}
