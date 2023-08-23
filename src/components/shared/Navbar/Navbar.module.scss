@@ -1,9 +1,11 @@
 .nav {
   background-color: #040f14;
   height: 100%;
-  width: 5vw;
+  width: 74px;
   position: fixed;
-  transition: 0.5s;
+  // transition nur aktivieren, wenn das <p> problem gelöst wurde
+  // transition: 2s;
+  border-right: 2px solid #fff;
 }
 
 .nav_icons {
@@ -17,9 +19,21 @@
     gap: 3rem;
     margin: auto;
 
-    img:hover {
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    a:hover {
       background-color: hsla(54, 100%, 56%, 0.253);
       border-radius: 15px;
+    }
+
+    p {
+      color: white;
+      font-family: oswald;
+      font-size: 1.5rem;
+      font-weight: 300;
     }
   }
 }
@@ -29,5 +43,6 @@
   border-radius: 15px;
 }
 
-.nav_icons_inactive {
+.close_icon {
+  margin-left: auto;
 }
