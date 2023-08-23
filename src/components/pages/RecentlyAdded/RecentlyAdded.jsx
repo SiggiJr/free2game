@@ -29,11 +29,14 @@ const RecentlyAdded = () => {
   return (
     <section className={styles["recently-added"]}>
       <header className={styles.hero}>
+        <div className={styles.hero_div}>
         <h1>Recently Added</h1>
+        </div>
       </header>
-
-      <Button title={"Back to Home"} path={``} />
-      
+      <div className={styles.btn_div}>
+      <Button title={"HOME"} path={``} />
+      </div>
+      <div className={styles.grid_div}>
       <div className={gridStyle["list-wrapper"]}>
         {games.map((game) => {
           return (
@@ -43,6 +46,7 @@ const RecentlyAdded = () => {
             />
           )
         })}
+      </div>
       </div>
     </section>
   );
