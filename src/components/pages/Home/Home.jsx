@@ -47,7 +47,7 @@ const Home = () => {
           <Button
             title={"SHOW MORE"}
             path={"recentlyadded"}
-            filterByButton={"sorty-by=release-date"}
+            sortByByButton={"release-date"}
           />
         </div>
       </section>
@@ -75,7 +75,10 @@ const Home = () => {
           <Button
             title={"SHOW MORE"}
             path={"allgames"}
-            filterByButton={"sorty-by=popularity&platform=pc"}
+            // filterByButton={"sorty-by=popularity&platform=pc"}
+            platformByButton={"pc"}
+            sortByByButton={"popularity"}
+
           />
         </div>
       </section>
@@ -95,7 +98,10 @@ const Home = () => {
           <Button
             title={"SHOW MORE"}
             path={"allgames"}
-            filterByButton={"sorty-by=popularity&platform=browser"}
+            // filterByButton={"sorty-by=popularity&platform=browser"}
+            sortByByButton={"popularity"}
+            platformByButton={"browser"}
+            
           />
         </div>
       </section>

@@ -12,12 +12,22 @@ import { createContext, useState } from "react";
 import SearchBar from "./components/shared/SearchBar/SearchBar";
 
 export const FilterContext = createContext();
+export const PlatformContext = createContext();
+export const GenreContext = createContext();
+export const SortByContext = createContext();
 
 function App() {
-  const [filter, setFilter] = useState("");
+  // const [filter, setFilter] = useState("");
+  const [platform, setPlatform] = useState("all");
+  const [genre, setGenre] = useState("");
+  const [sortBy, setSortBy] = useState("");
+
   return (
     <>
-    <FilterContext.Provider value={{filter, setFilter}}>
+    {/* <FilterContext.Provider value={{filter, setFilter}}> */}
+    <PlatformContext.Provider value={{platform, setPlatform}}>
+    <GenreContext.Provider value={{genre, setGenre}}>
+    <SortByContext.Provider value={{sortBy, setSortBy}}>
     <SearchBar/>
     <Navbar />
       <Routes>
@@ -50,7 +60,10 @@ function App() {
             element={<TopGamesItem />}
           />
         </Routes>
-      </FilterContext.Provider>
+      </SortByContext.Provider>
+      </GenreContext.Provider>
+      </PlatformContext.Provider>
+      {/* </FilterContext.Provider> */}
     </>
   );
 }
