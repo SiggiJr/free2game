@@ -9,6 +9,7 @@ import HomeItem from "./components/shared/HomeItem/HomeItem";
 import Navbar from "./components/shared/Navbar/Navbar";
 import TopGamesItem from "./components/shared/TopGamesItem/TopGamesItem";
 import { createContext, useState } from "react";
+import SearchBar from "./components/shared/SearchBar/SearchBar";
 
 export const FilterContext = createContext();
 
@@ -16,12 +17,13 @@ function App() {
   const [filter, setFilter] = useState("");
   return (
     <>
-      <FilterContext.Provider value={{ filter, setFilter }}>
-        <Navbar />
-        <Routes>
-          <Route
-            path="/"
-            element={<Home />}
+    <FilterContext.Provider value={{filter, setFilter}}>
+    <SearchBar/>
+    <Navbar />
+      <Routes>
+        <Route
+          path="/"
+          element={<Home />}
           />
           <Route
             path="/allgames"
