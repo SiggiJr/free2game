@@ -8,6 +8,7 @@ import ListItem from "./components/shared/ListItem/ListItem";
 import HomeItem from "./components/shared/HomeItem/HomeItem";
 import Navbar from "./components/shared/Navbar/Navbar";
 import { createContext, useState } from "react";
+import SearchBar from "./components/shared/SearchBar/SearchBar";
 
 export const FilterContext = createContext()
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
     <FilterContext.Provider value={{filter, setFilter}}>
+    <SearchBar/>
     <Navbar />
       <Routes>
         <Route

@@ -1,0 +1,47 @@
+//position sticky, fix
+//onChange=
+@font-face {
+    font-family: Oswald;
+    src: url(../../../assets/fonts/Oswald/Oswald-VariableFont_wght.ttf);
+}
+.searchbar_section {
+    color: #ffe81e;//WHITE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    display: flex;
+    font-family: Oswald;
+    justify-content: space-between;
+
+    position: fixed;
+    margin-left: 80px;
+    padding: 10px;
+    width: 1180px;
+    height: 64px;
+
+
+    .text {
+        display: flex;
+        gap: 10px;
+
+        img {
+            width: 32.5px;
+            height: 27px;
+        }
+        h1 {
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+    }
+
+    .input {
+        background-color: #375470;
+        background-image: url(../../../assets/img/Search.svg);
+        background-repeat: no-repeat;
+        background-position: right;
+        border-radius: 12px;
+        border-style: none;
+
+        width: 277px;
+        height: 40px;
+    }
+}
