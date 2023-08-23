@@ -1,61 +1,34 @@
 import styles from "./Home.module.scss";
-import { data } from "../../../assets/utils/data/data.js";
 import ListItem from "../../shared/ListItem/ListItem";
 import HomeItem from "../../shared/HomeItem/HomeItem";
 import Button from "../../shared/Button/Button";
 import gridStyle from "../../../modules/Grid.module.scss";
 import { useEffect, useState } from "react";
 
+import { getGamesByFilter } from "../../../assets/utils/api/api";
+
 const Home = () => {
-  const recentlyAddedData = data.filter((game, index) => index < 4);
+  const [topAddedGames, setTopAddedGames] = useState([]);
+  const [topPcGames, setTopPcGames] = useState([]);
+  const [topBrowserGames, setTopBrowserGames] = useState([]);
 
-  // const [games, setGames] = useState([])
+  useEffect(() => {
+    getGamesByFilter(`sort-by=release-date`)
+      .then(gamesData => setTopAddedGames(gamesData.slice(0, 4)))
+  }, []);
 
-  //   const asyncFetch = async () => {
-  //     const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc';
-  // const options = {
-  // 	// method: 'GET',
-  // 	headers: {
-  // 		'X-RapidAPI-Key': '7d3c088315mshaec6b2406b87386p1ee597jsnb8fa3e52af4c',
-  // 		'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-  // 	}
-  // };
+  useEffect(() => {
+    getGamesByFilter(`sorty-by=popularity&platform=pc`)
+      .then(gamesData => setTopPcGames(gamesData.slice(0, 4)))
+  }, []);
 
-  // try {
-  // 	const response = await fetch(url, options);
-  // 	const result = await response.json();
-  // 	console.log(result);
-  //   setGames(result)
-  // } catch (error) {
-  // 	console.error(error);
-  // }
-  //   }
-
-  // useEffect(() => {
-  //   asyncFetch()
-  // }, [])
-
-  // useEffect(() => {
-  //   fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc', {
-  //     // method: 'GET',
-  //     headers: {
-  //       'X-RapidAPI-Key': '7d3c088315mshaec6b2406b87386p1ee597jsnb8fa3e52af4c',
-  //       'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-  //     }
-  //   })
-  //   .then(response => {
-  //     if (!response.ok) {
-  //       throw new Error("Fetch fehlgeschlagen")
-  //     }
-  //     return response.json()
-  //   })
-  //   .then(gamesData => setGames(gamesData))
-  //   .catch(error => console.error(error.message))
-  // }, [])
+  useEffect(() => {
+    getGamesByFilter(`sorty-by=popularity&platform=browser`)
+      .then(gamesData => setTopBrowserGames(gamesData.slice(0, 4)))
+  }, []);
 
   const date = new Date();
 
-  // console.log(recentlyAddedData);
   return (
     <section className={styles.home}>
       <header>
@@ -64,7 +37,7 @@ const Home = () => {
       <section className={styles.recently_added}>
         <h3>Recently Added</h3>
         <div className={gridStyle["list-wrapper"]}>
-          {recentlyAddedData.map((game) => (
+          {topAddedGames.map((game) => (
             <HomeItem
               key={game.id}
               game={game}
@@ -82,7 +55,13 @@ const Home = () => {
           Top 4 Games for PC in{" "}
           {date.toLocaleDateString("en-US", { month: "long", year: "numeric" })}
         </h3>
-        {recentlyAddedData.map((game) => (
+        {topPcGames.map((game, index) => (
+
+          // index === 0 && (
+          //   <Top1/>
+          // )
+          // <Top2-4/>
+
           <ListItem
             key={game.id}
             game={game}
@@ -100,7 +79,7 @@ const Home = () => {
           {date.toLocaleDateString("en-US", { month: "long", year: "numeric" })}
         </h3>
         <div className={gridStyle["list-wrapper"]}>
-          {recentlyAddedData.map((game) => (
+          {topBrowserGames.map((game) => (
             <ListItem
               key={game.id}
               game={game}
