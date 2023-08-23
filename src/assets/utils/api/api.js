@@ -12,6 +12,8 @@ const options = {
 };
 
 export const getGamesByFilter = (filter) => {
+  console.log(apiKey);
+  console.log(apiHost);
   return fetch(`${apiLink}?${filter}`, options)
     .then((response) => {
       if (!response.ok) throw new Error(`Fetch failed: ${response.statusText}`);
