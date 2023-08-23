@@ -49,12 +49,15 @@
       font-family: oswald;
       margin: 2rem 0 3rem 4rem;
     }
-    div {
-      margin-bottom: 2rem;
+
+    .home_top_games_pc_list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .home_button_align_right {
       text-align: right;
+      padding-bottom: 2rem;
     }
 
     button {

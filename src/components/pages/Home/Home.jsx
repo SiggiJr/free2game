@@ -84,12 +84,14 @@ const Home = () => {
           Top 4 Games for PC in{" "}
           {date.toLocaleDateString("en-US", { month: "long", year: "numeric" })}
         </h3>
-        {recentlyAddedData.map((game) => (
-          <ListItem
-            key={game.id}
-            game={game}
-          />
-        ))}
+        <div className={styles.home_top_games_pc_list}>
+          {recentlyAddedData.map((game) => (
+            <ListItem
+              key={game.id}
+              game={game}
+            />
+          ))}
+        </div>
         <div className={styles.home_button_align_right}>
           <Button
             title={"SHOW MORE"}

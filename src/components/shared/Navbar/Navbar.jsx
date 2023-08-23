@@ -8,7 +8,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [navWidth, setNavWidth] = useState("5vw");
+  const [navWidth, setNavWidth] = useState("74px");
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNav = () => {
@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   const closeNav = () => {
-    setNavWidth("5vw");
+    setNavWidth("74px");
     setIsNavOpen(false);
   };
 
