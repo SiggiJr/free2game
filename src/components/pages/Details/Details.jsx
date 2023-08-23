@@ -46,7 +46,7 @@ const Details = () => {
           <div className={styles.general_informations}>
             <h3>Platform: {details.platform}</h3>
             <p className={styles.genre}>{details.genre}</p>
-            <Button title={"PLAY NOW"} path={"/"}/>
+            <Button title={"PLAY NOW"} path={"allgames"}/>
           </div>
           {/* <button className={styles.btn}>PLAY NOW</button> */}
         </article>
