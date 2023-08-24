@@ -3,19 +3,23 @@
   src: url(../../../assets/fonts/Oswald/Oswald-VariableFont_wght.ttf);
 }
 .all-games {
-  background-color: #040F14;;
+  background-color: #040F14;
+  margin-left: 74px;
 
   .hero {
     background-color: #040F14;
-    padding-top: 60px;
-    padding-left: 90px;
+    padding-top: 64px;
+    // padding-left: 90px;
+    // padding-right: 30px;
+    padding-inline: 24px;
 
     .bg_div {
       background-image: url(../../../assets/img/background_allgames.png);
       background-repeat: no-repeat;
       border-radius: 24px;
-      width: 1318px;
-      height: 491px;
+      // width: 1318px;
+      // height: 491px;
+
     }
 
     h1 {
@@ -27,8 +31,9 @@
       font-family: Oswald;
       text-transform: uppercase;
 
-      padding-left: 180px;
-      padding-top: 400px;
+      padding-left: 56px;
+      padding-top: 361px;
+      padding-bottom: 72px;
     }
   }
   .list-controls {
@@ -41,6 +46,6 @@
   }
 
   .grid_div {
-    margin-left: 74px;
+    // margin-left: 74px;
   }
 }
