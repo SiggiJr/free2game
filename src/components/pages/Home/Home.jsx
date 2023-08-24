@@ -4,9 +4,8 @@ import HomeItem from "../../shared/HomeItem/HomeItem";
 import Button from "../../shared/Button/Button";
 import gridStyle from "../../../modules/Grid.module.scss";
 import { useEffect, useState } from "react";
-import { data } from "../../../assets/utils/data/data";
 
-import { getGamesByFilter } from "../../../assets/utils/api/api";
+import { getGamesByFilter, options } from "../../../assets/utils/api/api";
 import TopGamesItem from "../../shared/TopGamesItem/TopGamesItem";
 import TopGamesItemNext from "../../shared/TopGamesItemNext/TopGamesItemNext";
 
@@ -15,17 +14,32 @@ const Home = () => {
   const [topPcGames, setTopPcGames] = useState([]);
   const [topBrowserGames, setTopBrowserGames] = useState([]);
 
+  // const [bestPCGame, setBestPCGame] = useState({});
+
   useEffect(() => {
     Promise.all([
       getGamesByFilter(`games?sort-by=release-date`),
       getGamesByFilter(`games?sort-by=popularity&platform=pc`),
       getGamesByFilter(`games?sort-by=popularity&platform=browser`)
     ])
-    .then((gamesDataArray)=>{
-      setTopAddedGames(gamesDataArray[0].slice(0, 4))
-      setTopPcGames(gamesDataArray[1].slice(0, 4))
-      setTopBrowserGames(gamesDataArray[2].slice(0, 4))
-    })
+      .then((gamesDataArray) => {
+        setTopAddedGames(gamesDataArray[0].slice(0, 4))
+        setTopPcGames(gamesDataArray[1].slice(0, 4))
+        setTopBrowserGames(gamesDataArray[2].slice(0, 4))
+      })
+      // .then(
+      //   console.log(topPcGames[0].id)
+      //   fetch(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${topPcGames[0].id}`, options)
+      //     .then((response) => {
+      //       if (!response.ok) throw new Error("fetch error details");
+      //       return response.json();
+      //     })
+      //     .then(detailsData => {
+      //       console.log(detailsData)
+      //       setBestPCGame(detailsData);
+      //     })
+      // )
+      .catch((error) => console.error(error.message))
   }, []);
 
   const currentMonth = new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" });
@@ -58,6 +72,18 @@ const Home = () => {
           Top 4 PC-Games in {currentMonth}
         </h3>
         <div className={styles.home_top_games_pc_list}>
+          {/* {<TopGamesItem
+            key={bestPCGame.id}
+            game={bestPCGame}
+          />}
+          {topPcGames.map((game, index) => (
+            index > 0 
+              ? <TopGamesItemNext
+              key={game.id}
+              game={game}
+              />
+              : null
+          ))} */}
           {topPcGames.map((game, index) => {
             return (
               index === 0

@@ -54,15 +54,19 @@ const Details = () => {
           <p>{details.description}</p>
         </article>
 
-        <img className={styles.img}
-          src={details.screenshots[1].image}
-          alt={details.title}
-        />
+        {details.screenshots[1] &&
+          <img className={styles.img}
+            src={details.screenshots[1]?.image}
+            alt={details.title}
+          />
+        }
 
-        <img className={styles.img}
-          src={details.screenshots[2].image}
-          alt={details.title}
-        />
+        {details.screenshots[2] &&
+          <img className={styles.img}
+            src={details.screenshots[2]?.image}
+            alt={details.title}
+          />
+        }
 
         <article className={styles.info}>
           <h3>Additional Information</h3>
