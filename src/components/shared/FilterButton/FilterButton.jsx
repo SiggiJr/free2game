@@ -15,7 +15,7 @@ const FilterButton = ({filter, index}) => {
   }
 
   return ( 
-    <p style={{color: "white"}}>{filter} <span onClick={() => handleDelete()}>X</span></p>
+    <p style={{color: "white"}}>{filter}<span onClick={() => handleDelete()}>X</span></p>
   );
 }
 
