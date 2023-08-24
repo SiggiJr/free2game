@@ -84,7 +84,10 @@ const Details = () => {
         </article>
 
         <article className={styles.system}>
+          <div className={styles.headline_div}>
           <h3>Minimum System Requirements</h3>
+          </div>
+          <div className={styles.div_around}>
           <div className={styles.system_div_left}>
           <h4>OS</h4>
           <p>{details.platform}</p>
@@ -104,6 +107,7 @@ const Details = () => {
 
             <h4>Additional Notes</h4>
             <p>Specifications may change during development</p>
+          </div>
           </div>
         </article>
       </div>
