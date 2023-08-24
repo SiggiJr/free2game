@@ -19,7 +19,7 @@ const SearchBar = () => {
   }, [location.pathname])
 
   useEffect(() => {
-    getGamesByFilter()
+    getGamesByFilter("games")
       .then((gamesData) => {
         setGames(gamesData)
         const result = [...games].filter((game) => {

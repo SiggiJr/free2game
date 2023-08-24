@@ -1,17 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { PlatformContext } from "../../../App";
 
-const CollapsableItem = () => {
+const CollapsableItem = ({options}) => {
 
   const {platform, setPlatform} = useContext(PlatformContext)
-
-  const options = [
-    {label: "All Platforms", value: "all"},
-    {label: "Windows (PC)", value: "pc"},
-    {label: "Browser (Web)", value: "browser"}
-  ]
-
-  console.log(options.slice(1));
 
   return ( 
     <>
