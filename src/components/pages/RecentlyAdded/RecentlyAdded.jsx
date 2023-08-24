@@ -10,7 +10,7 @@ const RecentlyAdded = () => {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    getGamesByFilter(`sort-by=release-date`)
+    getGamesByFilter(`games?sort-by=release-date`)
       .then(gamesData => setGames(gamesData))
   }, []);
 

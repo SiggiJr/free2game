@@ -17,5 +17,5 @@ const SortByCollapsableItem = ({options}) => {
     </>
   );
 }
- 
+
 export default SortByCollapsableItem;

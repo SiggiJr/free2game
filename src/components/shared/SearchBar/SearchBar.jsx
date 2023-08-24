@@ -5,18 +5,10 @@ import { useEffect, useState } from "react";
 import { getGamesByFilter } from "../../../assets/utils/api/api";
 import SearchItem from "../SearchItem/SearchItem";
 
-import { useLocation } from "react-router-dom";
-
 const SearchBar = () => {
   const [games, setGames] = useState([]);
   const [gamesFound, setGamesFound] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-
-  const location = useLocation();
-
-  useEffect(()=> {
-    setSearchInput("");
-  }, [location.pathname])
 
   useEffect(() => {
     getGamesByFilter("games")
@@ -31,15 +23,15 @@ const SearchBar = () => {
 
   return (
     <section className={styles.searchbar_section}>
-      <div className={styles.text}>
         <Link to="/">
+      <div className={styles.text}>
           <img
             src={logo}
             alt="free2game logo"
           />
           <h1>FREE2GAME</h1>
-        </Link>
       </div>
+        </Link>
       <div className={styles.user}>
         <input
           className={styles.input}

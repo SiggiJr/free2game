@@ -20,7 +20,7 @@ function App() {
   // const [filter, setFilter] = useState("");
   const [platform, setPlatform] = useState("all");
   const [genre, setGenre] = useState([]);
-  const [sortBy, setSortBy] = useState("");
+  const [sortBy, setSortBy] = useState("relevance");
 
   return (
     <>

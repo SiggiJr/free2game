@@ -9,6 +9,8 @@ import { GenreContext, PlatformContext, SortByContext } from "../../../App.jsx";
 import PlatformCollapsable from "../../PlatformCollapsable/PlatformCollapsable";
 import GenreCollapsable from "../../GenreCollapsable/GenreCollapsable";
 import SortByCollapsable from "../../SortByCollapsable/SortByCollasable";
+import FilterButtons from "../../FilterButtons/FilterButtons";
+import FilterButton from "../../shared/FilterButton/FilterButton";
 
 const AllGames = () => {
   const [games, setGames] = useState([]);
@@ -16,6 +18,8 @@ const AllGames = () => {
   const {genre, setGenre} = useContext(GenreContext)
   const {sortBy, setSortBy} = useContext(SortByContext)
   const [filter, setFilter] = useState("")
+
+  console.log(filter);
 
   
   useEffect(() => {
@@ -26,26 +30,28 @@ const AllGames = () => {
       const genreString = genre.join(".")
       setFilter(`filter?platform=${platform}${sortBy !== "" ? `&sort-by=${sortBy}` : ""}&tag=${genreString}`)
     }
-    // getGamesByFilter(filter).then((gamesData) => setGames(gamesData));
   }, [platform, sortBy, genre]);
 
   useEffect(() => {
     if (filter !== "") {
+      console.log(filter);
+      console.log(platform);
+      console.log(sortBy);
       getGamesByFilter(filter).then((gamesData) => setGames(gamesData));
     }
   }, [filter])
 
-  const handlePlatform = (event) => {
-    setPlatform(event.target.value);
-  };
+  // const handlePlatform = (event) => {
+  //   setPlatform(event.target.value);
+  // };
 
-  const handleGenre = (event) => {
-    setGenre(event.target.value);
-  };
+  // const handleGenre = (event) => {
+  //   setGenre(event.target.value);
+  // };
 
-  const handleSortBy = (event) => {
-    setSortBy(event.target.value);
-  };
+  // const handleSortBy = (event) => {
+  //   setSortBy(event.target.value);
+  // };
 
   const platformOptions = [
       "PLATFORM",
@@ -88,10 +94,10 @@ const AllGames = () => {
         <PlatformCollapsable options={platformOptions}/>
         <GenreCollapsable options={genreOptions}/>
         <SortByCollapsable options={sortByOptions}/>
-        {/* 
-      moba, social, sandbox, open-world, pvp, pve, pixel, voxel, zombie, turn-based, first-person, third-Person, top-down, tank, space, sailing, side-scroller, superhero, permadeath, card, battle-royale, mmo, mmofps, mmotps, 3d, 2d, anime, fantasy, sci-fi, fighting, action-rpg, action, military, martial-arts, flight, low-spec, tower-defense, horror, mmorts */}
       </div>
 
+      {/* {genre.map((genre, index) => <FilterButton key={index} genre={genre} index={index}/>)} */}
+      <FilterButtons/>
 
       <div className={styles.grid_div}>
       <div className={gridStyle["list-wrapper"]}>
