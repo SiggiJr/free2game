@@ -9,9 +9,6 @@ const HomeItem = ({ game }) => {
     <img src={game.platform === "PC (Windows)" ? IconWindows : IconBrowser} />
   );
 
-  const lorem =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis libero totam culpa a maiores excepturi nesciunt veniam dolorem possimus non sunt eligendi nobis, aspernatur similique.";
-
   return (
     <section className={style.home_item}>
       <img
@@ -20,7 +17,7 @@ const HomeItem = ({ game }) => {
         alt=""
       />
       <div className={style.home_item_title}>{game.title}</div>
-      <div className={style.home_item_short_description}>{lorem}</div>
+      <div className={style.home_item_short_description}>{game.short_description}</div>
       <div className={style.home_item_button}>
         <Button
           title={"Read More"}
