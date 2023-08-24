@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 
 import ListItem from "../../shared/ListItem/ListItem";
-import Button from "../../shared/Button/Button.jsx";
 
 import styles from "./AllGames.module.scss";
 import gridStyle from "../../../modules/Grid.module.scss";
@@ -44,14 +43,6 @@ const AllGames = () => {
         <h1>ALL GAMES</h1>
         </div>
       </header>
-      <div className={styles.btn_div}>
-      <Button
-        title={"HOME"}
-        path={``}
-      />
-      </div>
-
-
       <div className={styles["list-controls"]}>
         <select
           name="platform"

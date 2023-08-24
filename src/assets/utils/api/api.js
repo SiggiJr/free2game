@@ -3,7 +3,7 @@ const apiLink = "https://free-to-play-games-database.p.rapidapi.com/api/games";
 const apiKey = import.meta.env.VITE_API_KEY;
 const apiHost = import.meta.env.VITE_API_HOST;
 
-const options = {
+export const options = {
   method: "GET",
   headers: {
     "X-RapidAPI-Key": apiKey,

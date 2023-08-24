@@ -5,10 +5,18 @@ import { useEffect, useState } from "react";
 import { getGamesByFilter } from "../../../assets/utils/api/api";
 import SearchItem from "../SearchItem/SearchItem";
 
+import { useLocation } from "react-router-dom";
+
 const SearchBar = () => {
   const [games, setGames] = useState([]);
   const [gamesFound, setGamesFound] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+
+  const location = useLocation();
+
+  useEffect(()=> {
+    setSearchInput("");
+  }, [location.pathname])
 
   useEffect(() => {
     getGamesByFilter()
