@@ -16,24 +16,19 @@ const Home = () => {
   const [topBrowserGames, setTopBrowserGames] = useState([]);
 
   useEffect(() => {
-    getGamesByFilter(`sort-by=release-date`).then((gamesData) =>
-      setTopAddedGames(gamesData.slice(0, 4))
-    );
+    Promise.all([
+      getGamesByFilter(`sort-by=release-date`),
+      getGamesByFilter(`sort-by=popularity&platform=pc`),
+      getGamesByFilter(`sort-by=popularity&platform=browser`)
+    ])
+    .then((gamesDataArray)=>{
+      setTopAddedGames(gamesDataArray[0].slice(0, 4))
+      setTopPcGames(gamesDataArray[1].slice(0, 4))
+      setTopBrowserGames(gamesDataArray[2].slice(0, 4))
+    })
   }, []);
 
-  useEffect(() => {
-    getGamesByFilter(`sorty-by=popularity&platform=pc`).then((gamesData) =>
-      setTopPcGames(gamesData.slice(0, 4))
-    );
-  }, []);
-
-  useEffect(() => {
-    getGamesByFilter(`sorty-by=popularity&platform=browser`).then((gamesData) =>
-      setTopBrowserGames(gamesData.slice(0, 4))
-    );
-  }, []);
-
-  const date = new Date();
+  const currentMonth = new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" });
 
   return (
     <section className={styles.home}>
@@ -54,45 +49,43 @@ const Home = () => {
           <Button
             title={"SHOW MORE"}
             path={"recentlyadded"}
-            filterByButton={"sorty-by=release-date"}
+            sortByByButton={"release-date"}
           />
         </div>
       </section>
       <section className={styles.top_games_pc}>
         <h3>
-          Top 4 Games for PC in{" "}
-          {date.toLocaleDateString("en-US", { month: "long", year: "numeric" })}
+          Top 4 PC-Games in {currentMonth}
         </h3>
         <div className={styles.home_top_games_pc_list}>
-          {/* {topPcGames.map((game, index) => (
-
-          // index === 0 && (
-          //   <Top1/>
-          // )
-          // <Top2-4/>
-
-          <ListItem
-            key={game.id}
-            game={game}
-            />
-          ))} */}
-          <TopGamesItem game={data[0]} />
-          <TopGamesItemNext game={data[0]} />
-          <TopGamesItemNext game={data[0]} />
-          <TopGamesItemNext game={data[0]} />
+          {topPcGames.map((game, index) => {
+            return (
+              index === 0
+                ? <TopGamesItem
+                  key={game.id}
+                  game={game}
+                />
+                : <TopGamesItemNext
+                  key={game.id}
+                  game={game}
+                />
+            )
+          }
+          )}
         </div>
         <div className={styles.home_button_align_right}>
           <Button
             title={"SHOW MORE"}
             path={"allgames"}
-            filterByButton={"sorty-by=popularity&platform=pc"}
+            platformByButton={"pc"}
+            sortByByButton={"popularity"}
+
           />
         </div>
       </section>
       <section className={styles.top_games_browser}>
         <h3>
-          Top 4 Games for Browser in{" "}
-          {date.toLocaleDateString("en-US", { month: "long", year: "numeric" })}
+          Top 4 Browser-Games in {currentMonth}
         </h3>
         <div className={gridStyle["list-wrapper"]}>
           {topBrowserGames.map((game) => (
@@ -106,7 +99,9 @@ const Home = () => {
           <Button
             title={"SHOW MORE"}
             path={"allgames"}
-            filterByButton={"sorty-by=popularity&platform=browser"}
+            sortByByButton={"popularity"}
+            platformByButton={"browser"}
+            
           />
         </div>
       </section>

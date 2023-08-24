@@ -23,7 +23,7 @@ const ListItem = ({ game }) => {
       <div className={style.list_item_title}>{game.title}</div>
       <div className={style.list_item_button}>
         <Button
-          title={"Read More"}
+          title={"READ MORE"}
           path={`game/${game.id}`}
         />
       </div>
