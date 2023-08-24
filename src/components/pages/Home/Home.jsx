@@ -4,8 +4,11 @@ import HomeItem from "../../shared/HomeItem/HomeItem";
 import Button from "../../shared/Button/Button";
 import gridStyle from "../../../modules/Grid.module.scss";
 import { useEffect, useState } from "react";
+import { data } from "../../../assets/utils/data/data";
 
 import { getGamesByFilter } from "../../../assets/utils/api/api";
+import TopGamesItem from "../../shared/TopGamesItem/TopGamesItem";
+import TopGamesItemNext from "../../shared/TopGamesItemNext/TopGamesItemNext";
 
 const Home = () => {
   const [topAddedGames, setTopAddedGames] = useState([]);
@@ -13,18 +16,21 @@ const Home = () => {
   const [topBrowserGames, setTopBrowserGames] = useState([]);
 
   useEffect(() => {
-    getGamesByFilter(`sort-by=release-date`)
-      .then(gamesData => setTopAddedGames(gamesData.slice(0, 4)))
+    getGamesByFilter(`sort-by=release-date`).then((gamesData) =>
+      setTopAddedGames(gamesData.slice(0, 4))
+    );
   }, []);
 
   useEffect(() => {
-    getGamesByFilter(`sorty-by=popularity&platform=pc`)
-      .then(gamesData => setTopPcGames(gamesData.slice(0, 4)))
+    getGamesByFilter(`sorty-by=popularity&platform=pc`).then((gamesData) =>
+      setTopPcGames(gamesData.slice(0, 4))
+    );
   }, []);
 
   useEffect(() => {
-    getGamesByFilter(`sorty-by=popularity&platform=browser`)
-      .then(gamesData => setTopBrowserGames(gamesData.slice(0, 4)))
+    getGamesByFilter(`sorty-by=popularity&platform=browser`).then((gamesData) =>
+      setTopBrowserGames(gamesData.slice(0, 4))
+    );
   }, []);
 
   const date = new Date();
@@ -58,7 +64,7 @@ const Home = () => {
           {date.toLocaleDateString("en-US", { month: "long", year: "numeric" })}
         </h3>
         <div className={styles.home_top_games_pc_list}>
-          {topPcGames.map((game, index) => (
+          {/* {topPcGames.map((game, index) => (
 
           // index === 0 && (
           //   <Top1/>
@@ -69,7 +75,11 @@ const Home = () => {
             key={game.id}
             game={game}
             />
-          ))}
+          ))} */}
+          <TopGamesItem game={data[0]} />
+          <TopGamesItemNext game={data[0]} />
+          <TopGamesItemNext game={data[0]} />
+          <TopGamesItemNext game={data[0]} />
         </div>
         <div className={styles.home_button_align_right}>
           <Button

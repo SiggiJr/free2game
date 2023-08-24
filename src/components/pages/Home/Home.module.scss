@@ -1,10 +1,10 @@
 .home {
   width: 95%;
   margin-left: 5%;
+  padding-top: 4%;
   background-color: #040f14;
 
   header {
-    // margin-top: 64px;
     background-image: url(../../../assets/img/background_home.png);
     height: 70vh;
     object-fit: cover;
@@ -52,7 +52,10 @@
 
     .home_top_games_pc_list {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 2;
+      grid-template-rows: 3;
+      row-gap: 1rem;
+      margin: 0 4rem;
     }
 
     .home_button_align_right {
