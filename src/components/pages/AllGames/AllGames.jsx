@@ -39,13 +39,17 @@ const AllGames = () => {
   return (
     <section className={styles["all-games"]}>
       <header className={styles.hero}>
-        <h1>All Games</h1>
+        <div className={styles.bg_div}>
+        <h1>ALL GAMES</h1>
+        </div>
       </header>
-
+      <div className={styles.btn_div}>
       <Button
-        title={"Back to Home"}
+        title={"HOME"}
         path={``}
       />
+      </div>
+
 
       <div className={styles["list-controls"]}>
         <select
@@ -82,6 +86,8 @@ const AllGames = () => {
       moba, social, sandbox, open-world, pvp, pve, pixel, voxel, zombie, turn-based, first-person, third-Person, top-down, tank, space, sailing, side-scroller, superhero, permadeath, card, battle-royale, mmo, mmofps, mmotps, 3d, 2d, anime, fantasy, sci-fi, fighting, action-rpg, action, military, martial-arts, flight, low-spec, tower-defense, horror, mmorts */}
       </div>
 
+
+      <div className={styles.grid_div}>
       <div className={gridStyle["list-wrapper"]}>
         {games.map((game) => {
           return (
@@ -91,6 +97,7 @@ const AllGames = () => {
             />
           );
         })}
+      </div>
       </div>
     </section>
   );
