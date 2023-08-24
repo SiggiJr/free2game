@@ -13,30 +13,32 @@ const TopGamesItemNext = ({ game }) => {
   const [gameItems, setGameItems] = useState();
 
   return (
-    <section className={style.list_item}>
+    <section className={style.top_games_item_next}>
       <img
-        className={style.list_item_img}
+        className={style.top_games_item_next_img}
         src={game.thumbnail}
         alt=""
       />
-      <div className={style.list_item_title}>{game.title}</div>
-      <div className={style.list_item_button}>
-        <Button
-          title={"Read More"}
-          path={`game/${game.id}`}
-        />
-      </div>
-      <div className={style.list_item_filter}>
-        <Link
-          to="/allgames"
-          className={style.list_item_platform}>
-          {platformIcon}
-        </Link>
-        <Link
-          to="/allgames"
-          className={style.list_item_genre}>
-          {game.genre}
-        </Link>
+      <div>
+        <div className={style.top_games_item_next_title}>{game.title}</div>
+        <div className={style.top_games_item_next_button}>
+          <Button
+            title={"READ MORE"}
+            path={`game/${game.id}`}
+          />
+        </div>
+        <div className={style.top_games_item_next_filter}>
+          <Link
+            to="/allgames"
+            className={style.top_games_item_next_platform}>
+            {platformIcon}
+          </Link>
+          <Link
+            to="/allgames"
+            className={style.top_games_item_next_genre}>
+            {game.genre}
+          </Link>
+        </div>
       </div>
     </section>
   );
