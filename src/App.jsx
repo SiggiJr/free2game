@@ -21,6 +21,7 @@ function App() {
   const [platform, setPlatform] = useState("all");
   const [genre, setGenre] = useState([]);
   const [sortBy, setSortBy] = useState("relevance");
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
     <>
@@ -28,8 +29,8 @@ function App() {
     <PlatformContext.Provider value={{platform, setPlatform}}>
     <GenreContext.Provider value={{genre, setGenre}}>
     <SortByContext.Provider value={{sortBy, setSortBy}}>
-    <SearchBar/>
-    <Navbar />
+    <SearchBar isNavOpen={isNavOpen}/>
+    <Navbar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen}/>
       <Routes>
         <Route
           path="/"

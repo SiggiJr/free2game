@@ -7,8 +7,8 @@ import RecentlyAddedIcon from "../../../assets/img/RecentlyAddedIcon.svg";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
+const Navbar = ({isNavOpen, setIsNavOpen}) => {
+  // const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNav = () => {
     if (isNavOpen) {
@@ -34,13 +34,15 @@ const Navbar = () => {
         <div>
           <div
             className={style.burger_menu}
-            onClick={toggleNav}>
+            // onClick={toggleNav}
+            >
             <img
               className={`${style.nav_toggle_icon} ${
                 isNavOpen ? style.close_icon : ""
               }`}
               src={isNavOpen ? CloseIcon : BurgerIcon}
               alt=""
+              onClick={toggleNav}
             />
           </div>
         </div>

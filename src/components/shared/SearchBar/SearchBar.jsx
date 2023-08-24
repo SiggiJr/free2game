@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { getGamesByFilter } from "../../../assets/utils/api/api";
 import SearchItem from "../SearchItem/SearchItem";
 
-const SearchBar = () => {
+const SearchBar = ({isNavOpen}) => {
   const [games, setGames] = useState([]);
   const [gamesFound, setGamesFound] = useState([]);
   const [searchInput, setSearchInput] = useState("");
@@ -24,7 +24,7 @@ const SearchBar = () => {
   return (
     <section className={styles.searchbar_section}>
         <Link to="/">
-      <div className={styles.text}>
+      <div className={styles.text} style={isNavOpen ? {marginLeft: "250px"} : {}}>
           <img
             src={logo}
             alt="free2game logo"
