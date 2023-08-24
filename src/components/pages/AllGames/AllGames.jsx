@@ -32,6 +32,9 @@ const AllGames = () => {
 
   useEffect(() => {
     if (filter !== "") {
+      console.log(filter);
+      console.log(platform);
+      console.log(sortBy);
       getGamesByFilter(filter).then((gamesData) => setGames(gamesData));
     }
   }, [filter])
@@ -96,8 +99,6 @@ const AllGames = () => {
         <PlatformCollapsable options={platformOptions}/>
         <GenreCollapsable options={genreOptions}/>
         <SortByCollapsable options={sortByOptions}/>
-        {/* 
-      moba, social, sandbox, open-world, pvp, pve, pixel, voxel, zombie, turn-based, first-person, third-Person, top-down, tank, space, sailing, side-scroller, superhero, permadeath, card, battle-royale, mmo, mmofps, mmotps, 3d, 2d, anime, fantasy, sci-fi, fighting, action-rpg, action, military, martial-arts, flight, low-spec, tower-defense, horror, mmorts */}
       </div>
 
 
