@@ -46,3 +46,45 @@
 .close_icon {
   margin-left: auto;
 }
+
+@media (max-width: 500px) {
+  .nav {
+    height: 5%;
+    width: 100vw;
+    bottom: 0;
+    position: fixed;
+    border: none;
+  }
+  .burger_menu {
+    display: none;
+  }
+  .nav_icons {
+    div {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+      align-content: center;
+
+      a {
+        display: flex;
+        align-items: center;
+      }
+
+      a:hover {
+        background-color: hsla(54, 100%, 56%, 0.253);
+        border-radius: 15px;
+      }
+
+      p {
+        color: white;
+        font-family: oswald;
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.test {
+  width: 250px;
+}
