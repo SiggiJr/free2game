@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react";
 import Button from "../Button/Button";
-import style from "./TopGamesItem.module.scss";
+import style from "./TopGamesItemNext.module.scss";
 import IconWindows from "../../../assets/img/icon_windows.png";
 import IconBrowser from "../../../assets/img/icon_browser.png";
 import { Link } from "react-router-dom";
 
-const TopGamesItem = ({ game }) => {
-  const inlineImage = {
-    backgroundImage: `url(${game.thumbnail})`,
-  };
-
+const TopGamesItemNext = ({ game }) => {
   const platformIcon = (
     <img src={game.platform === "PC (Windows)" ? IconWindows : IconBrowser} />
   );
@@ -17,25 +13,28 @@ const TopGamesItem = ({ game }) => {
   const [gameItems, setGameItems] = useState();
 
   return (
-    <section
-      className={style.top_games_item}
-      style={inlineImage}>
-      <div className={style.top_games_item_title}>{game.title}</div>
-      <div className={style.top_games_item_button}>
+    <section className={style.list_item}>
+      <img
+        className={style.list_item_img}
+        src={game.thumbnail}
+        alt=""
+      />
+      <div className={style.list_item_title}>{game.title}</div>
+      <div className={style.list_item_button}>
         <Button
           title={"Read More"}
           path={`game/${game.id}`}
         />
       </div>
-      <div className={style.top_games_item_filter}>
+      <div className={style.list_item_filter}>
         <Link
           to="/allgames"
-          className={style.top_games_item_platform}>
+          className={style.list_item_platform}>
           {platformIcon}
         </Link>
         <Link
           to="/allgames"
-          className={style.top_games_item_genre}>
+          className={style.list_item_genre}>
           {game.genre}
         </Link>
       </div>
@@ -43,4 +42,4 @@ const TopGamesItem = ({ game }) => {
   );
 };
 
-export default TopGamesItem;
+export default TopGamesItemNext;

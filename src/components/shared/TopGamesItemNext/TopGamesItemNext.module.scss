@@ -1,22 +1,19 @@
-.top_games_item {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 4;
+.list_item {
+  grid-column-start: 2;
+  grid-column-end: 3;
+
   background-color: #102130;
-  width: 500px;
+  width: 700px;
+  height: 240px;
   border-radius: 25px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
-.top_games_item_img {
+.list_item_img {
   border-radius: 25px;
   margin-bottom: 2rem;
 }
 
-.top_games_item_title {
+.list_item_title {
   color: #fff;
   font-family: oswald;
   padding: 0 2rem;
@@ -26,27 +23,27 @@
   height: 3rem;
 }
 
-.top_games_item_button {
+.list_item_button {
   margin: 0 2rem;
   padding-bottom: 3rem;
   border-bottom: #ffffff33 solid 2px;
 }
 
-.top_games_item_filter {
+.list_item_filter {
   margin: 2rem 0 2rem 2rem;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.top_games_item_platform {
+.list_item_platform {
   color: #fff;
   border-radius: 15px;
   border: #ffe81e 1px solid;
   padding: 16px;
 }
 
-.top_games_item_genre {
+.list_item_genre {
   color: #fff;
   border-radius: 15px;
   border: #ffe81e 1px solid;

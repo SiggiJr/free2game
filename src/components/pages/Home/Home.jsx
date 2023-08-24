@@ -4,8 +4,11 @@ import HomeItem from "../../shared/HomeItem/HomeItem";
 import Button from "../../shared/Button/Button";
 import gridStyle from "../../../modules/Grid.module.scss";
 import { useEffect, useState } from "react";
+import { data } from "../../../assets/utils/data/data";
 
 import { getGamesByFilter } from "../../../assets/utils/api/api";
+import TopGamesItem from "../../shared/TopGamesItem/TopGamesItem";
+import TopGamesItemNext from "../../shared/TopGamesItemNext/TopGamesItemNext";
 
 const Home = () => {
   const [topAddedGames, setTopAddedGames] = useState([]);
@@ -26,7 +29,6 @@ const Home = () => {
   }, []);
 
   const currentMonth = new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" });
-  console.log(currentMonth)
 
   return (
     <section className={styles.home}>
@@ -59,11 +61,11 @@ const Home = () => {
           {topPcGames.map((game, index) => {
             return (
               index === 0
-                ? <ListItem
+                ? <TopGamesItem
                   key={game.id}
                   game={game}
                 />
-                : <HomeItem
+                : <TopGamesItemNext
                   key={game.id}
                   game={game}
                 />
@@ -75,7 +77,6 @@ const Home = () => {
           <Button
             title={"SHOW MORE"}
             path={"allgames"}
-            // filterByButton={"sorty-by=popularity&platform=pc"}
             platformByButton={"pc"}
             sortByByButton={"popularity"}
 
@@ -98,7 +99,6 @@ const Home = () => {
           <Button
             title={"SHOW MORE"}
             path={"allgames"}
-            // filterByButton={"sorty-by=popularity&platform=browser"}
             sortByByButton={"popularity"}
             platformByButton={"browser"}
             
