@@ -7,6 +7,7 @@ import styles from "./AllGames.module.scss";
 import gridStyle from "../../../modules/Grid.module.scss";
 import { getGamesByFilter } from "../../../assets/utils/api/api.js";
 import { GenreContext, PlatformContext, SortByContext } from "../../../App.jsx";
+import PlatformCollapsable from "../../PlatformCollapsable/PlatformCollapsable";
 
 const AllGames = () => {
   const [games, setGames] = useState([]);
@@ -82,6 +83,7 @@ const AllGames = () => {
           <option value="release-date">Release Date</option>
           <option value="alphabetical">Alphabetical</option>
         </select>
+        <PlatformCollapsable/>
         {/* 
       moba, social, sandbox, open-world, pvp, pve, pixel, voxel, zombie, turn-based, first-person, third-Person, top-down, tank, space, sailing, side-scroller, superhero, permadeath, card, battle-royale, mmo, mmofps, mmotps, 3d, 2d, anime, fantasy, sci-fi, fighting, action-rpg, action, military, martial-arts, flight, low-spec, tower-defense, horror, mmorts */}
       </div>

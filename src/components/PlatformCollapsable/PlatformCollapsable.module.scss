@@ -1,0 +1,13 @@
+.collapsable{
+  // color: white;
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+  background-color: #ffe81e;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.v{
+  transform: rotate(180deg);
+}
