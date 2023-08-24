@@ -6,19 +6,25 @@ import Button from '../../shared/Button/Button.jsx'
 import styles from './RecentlyAdded.module.scss'
 import gridStyle from '../../../modules/Grid.module.scss'
 import { getGamesByFilter } from '../../../assets/utils/api/api.js'
-import { FilterContext } from '../../../App.jsx'
+// import { FilterContext } from '../../../App.jsx'
 
 const RecentlyAdded = () => {
 
   const [games, setGames] = useState([]);
-  const {filter, setFilter} = useContext(FilterContext);
+  // const {filter, setFilter} = useContext(FilterContext);
 
-  useEffect(()=> {
-    getGamesByFilter(filter)
-    .then(gamesData => setGames(gamesData))
-  }, [filter])
+  // useEffect(()=> {
+  //   getGamesByFilter(filter)
+  //   .then(gamesData => setGames(gamesData))
+  // }, [filter])
 
-  setFilter(`?sort-by=release_date`)
+  useEffect(() => {
+    getGamesByFilter(`sort-by=release-date`)
+      .then(gamesData => {
+        setGames(gamesData)
+        console.log(gamesData.slice(0, 4))
+      })
+  }, []);
 
   return (
     <section className={styles["recently-added"]}>
