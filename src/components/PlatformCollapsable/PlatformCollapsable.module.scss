@@ -6,6 +6,12 @@
   background-color: #ffe81e;
   padding: 5px;
   border-radius: 10px;
+  display: flex;
+}
+
+.collapsable_wrapper{
+  display: flex;
+  flex-direction: column;
 }
 
 .v{

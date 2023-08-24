@@ -1,4 +1,4 @@
-const apiLink = "https://free-to-play-games-database.p.rapidapi.com/api/games";
+const apiLink = "https://free-to-play-games-database.p.rapidapi.com/api/";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const apiHost = import.meta.env.VITE_API_HOST;
@@ -12,7 +12,8 @@ const options = {
 };
 
 export const getGamesByFilter = (filter) => {
-  return fetch(`${apiLink}?${filter}`, options)
+  console.log(`${apiLink}?${filter}`);
+  return fetch(`${apiLink}${filter}`, options)
     .then((response) => {
       if (!response.ok) throw new Error(`Fetch failed: ${response.statusText}`);
       return response.json();

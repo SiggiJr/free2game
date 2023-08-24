@@ -17,9 +17,9 @@ const Home = () => {
 
   useEffect(() => {
     Promise.all([
-      getGamesByFilter(`sort-by=release-date`),
-      getGamesByFilter(`sort-by=popularity&platform=pc`),
-      getGamesByFilter(`sort-by=popularity&platform=browser`)
+      getGamesByFilter(`games?sort-by=release-date`),
+      getGamesByFilter(`games?sort-by=popularity&platform=pc`),
+      getGamesByFilter(`games?sort-by=popularity&platform=browser`)
     ])
     .then((gamesDataArray)=>{
       setTopAddedGames(gamesDataArray[0].slice(0, 4))

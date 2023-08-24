@@ -19,7 +19,7 @@ export const SortByContext = createContext();
 function App() {
   // const [filter, setFilter] = useState("");
   const [platform, setPlatform] = useState("all");
-  const [genre, setGenre] = useState("");
+  const [genre, setGenre] = useState([]);
   const [sortBy, setSortBy] = useState("");
 
   return (

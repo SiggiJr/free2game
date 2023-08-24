@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import CollapsableItem from '../shared/CollapsableItem/CollapsableItem';
-import styles from './PlatformCollapsable.module.scss'
+import GenreCollapsableItem from "../GenreCollapsableItem/GenreCollapsableItem";
+import { useState } from "react";
+import styles from '../PlatformCollapsable/PlatformCollapsable.module.scss'
 
-const PlatformCollapsable = ({options}) => {
-  
+
+const GenreCollapsable = ({options}) => {
   const [isCollapsed, setIsCollapsed] = useState(true)
 
   const handelCollapsable = () => {
@@ -16,9 +16,10 @@ const PlatformCollapsable = ({options}) => {
       <p>{options[0]}</p>
       <p className={isCollapsed ? "" : styles.v}>V</p>
     </div>
-    {isCollapsed ? "" : <CollapsableItem options={options[1]}/>}
+    {isCollapsed ? "" : <GenreCollapsableItem options={options[1]}/>}
     </div>
   );
 }
 
-export default PlatformCollapsable;
+
+export default GenreCollapsable;

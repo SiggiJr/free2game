@@ -11,7 +11,7 @@ const SearchBar = () => {
   const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
-    getGamesByFilter()
+    getGamesByFilter("games")
       .then((gamesData) => {
         setGames(gamesData)
         const result = [...games].filter((game) => {
