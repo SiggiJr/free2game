@@ -9,6 +9,9 @@ const Button = ({ title, path, platformByButton, sortByByButton}) => {
   const {sortBy, setSortBy} = useContext(SortByContext)
   // const {filter, setFilter} = useContext(FilterContext)
 
+
+
+
   const handleClick = () => {
     setPlatform(platformByButton)
     setSortBy(sortByByButton)
