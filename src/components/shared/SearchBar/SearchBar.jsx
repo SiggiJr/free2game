@@ -1,52 +1,36 @@
 import logo from "../../../assets/img/favicon.svg";
 import styles from "./SearchBar.module.scss";
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from "react";
+import { getGamesByFilter } from "../../../assets/utils/api/api";
+import SearchItem from "../SearchItem/SearchItem";
 
 const SearchBar = () => {
   const [games, setGames] = useState([]);
+  const [gamesFound, setGamesFound] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
-  const apiKey = import.meta.env.VITE_API_KEY;
-  const apiHost = import.meta.env.VITE_API_HOST;
-
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": apiKey,
-      "X-RapidAPI-Host": apiHost,
-    },
-  };
-
   useEffect(() => {
-    fetch(
-      `https://free-to-play-games-database.p.rapidapi.com/api/games`,
-      options
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("error fetch searchbar");
-        }
-        return response.json();
-      })
-      .then((gamesData) => setGames(gamesData))
-      .catch((error) => console.log(error.message));
-  }, []);
-
-  useEffect(() => {
-    const searchGames = [...games].filter((game) => {
-      return game.title.toLowerCase().includes(searchInput.toLowerCase());
-    });
-    // console.log(searchGames);
+    getGamesByFilter()
+      .then((gamesData) => {
+        setGames(gamesData)
+        const result = [...games].filter((game) => {
+          return game.title.toLowerCase().includes(searchInput.toLowerCase());
+        }).slice(0, 10);
+        setGamesFound(result)
+      });
   }, [searchInput]);
 
   return (
     <section className={styles.searchbar_section}>
       <div className={styles.text}>
-        <img
-          src={logo}
-          alt="free2game logo"
-        />
-        <h1>FREE2GAME</h1>
+        <Link to="/">
+          <img
+            src={logo}
+            alt="free2game logo"
+          />
+          <h1>FREE2GAME</h1>
+        </Link>
       </div>
       <div className={styles.user}>
         <input
@@ -57,6 +41,15 @@ const SearchBar = () => {
           onChange={(event) => setSearchInput(event.target.value)}
           value={searchInput}
         />
+        <div>
+          {searchInput &&
+            gamesFound.map((game) => (
+              <SearchItem
+                key={game.id}
+                game={game}
+              />
+            ))}
+        </div>
       </div>
     </section>
   );
