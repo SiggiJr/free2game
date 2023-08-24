@@ -52,14 +52,13 @@
 
     .home_top_games_pc_list {
       display: grid;
-      grid-template-columns: 2;
-      grid-template-rows: 3;
-      row-gap: 1rem;
-      margin: 0 4rem;
+      gap: 1rem;
+      margin: 0 4rem 2rem 4rem;
     }
 
     .home_button_align_right {
       text-align: right;
+
       padding-bottom: 2rem;
     }
 

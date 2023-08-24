@@ -8,7 +8,6 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [navWidth, setNavWidth] = useState("74px");
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNav = () => {
@@ -20,23 +19,22 @@ const Navbar = () => {
   };
 
   const openNav = () => {
-    setNavWidth("250px");
     setIsNavOpen(true);
   };
 
   const closeNav = () => {
-    setNavWidth("74px");
     setIsNavOpen(false);
   };
 
   return (
     <>
       <nav
-        className={style.nav}
-        style={{ width: navWidth }}
+        className={isNavOpen ? `${style.nav} ${style.test}` : `${style.nav}`}
         id="nav">
         <div>
-          <div onClick={toggleNav}>
+          <div
+            className={style.burger_menu}
+            onClick={toggleNav}>
             <img
               className={`${style.nav_toggle_icon} ${
                 isNavOpen ? style.close_icon : ""
