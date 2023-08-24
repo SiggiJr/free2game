@@ -1,0 +1,19 @@
+.search_item {
+  max-width: 285px;
+  padding: 1rem;
+  background-color: hsla(208, 50%, 13%, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+
+  .title {
+    color: #fff;
+    font-family: oswald;
+  }
+
+  .image {
+    max-width: 100px;
+    border-radius: 15px;
+  }
+}
