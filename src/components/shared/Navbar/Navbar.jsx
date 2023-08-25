@@ -4,8 +4,8 @@ import CloseIcon from "../../../assets/img/CloseIcon.png";
 import HomeIcon from "../../../assets/img/HomeIcon.svg";
 import AllGamesIcon from "../../../assets/img/AllGamesIcon.svg";
 import RecentlyAddedIcon from "../../../assets/img/RecentlyAddedIcon.svg";
-import { NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { useContext, useEffect } from "react";
 import { GenreContext, PlatformContext, SortByContext } from "../../../App";
 
 const Navbar = ({isNavOpen, setIsNavOpen}) => {
@@ -13,6 +13,12 @@ const Navbar = ({isNavOpen, setIsNavOpen}) => {
   const {platform, setPlatform} = useContext(PlatformContext)
   const {sortBy, setSortBy} = useContext(SortByContext)
   const {genre, setGenre} = useContext(GenreContext)
+
+  const location = useLocation().pathname;
+
+  useEffect(() => {
+    setIsNavOpen(false)
+  }, [location])
 
   const toggleNav = () => {
     if (isNavOpen) {
@@ -36,8 +42,7 @@ const Navbar = ({isNavOpen, setIsNavOpen}) => {
         className={isNavOpen ? `${style.nav} ${style.test}` : `${style.nav}`}
         id="nav">
         <div>
-          <div
-            className={style.burger_menu}
+          <div className={style.burger_menu}
             // onClick={toggleNav}
             >
             <img
