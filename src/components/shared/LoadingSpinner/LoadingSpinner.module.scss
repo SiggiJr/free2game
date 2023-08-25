@@ -1,0 +1,11 @@
+.bean_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #102130;
+
+  .bean {
+    height: 400px;
+  }
+}

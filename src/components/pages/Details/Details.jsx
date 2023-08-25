@@ -1,8 +1,8 @@
 import styles from "./Details.module.scss";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
 import { options } from "../../../assets/utils/api/api.js";
+import LoadingSpinner from "../../shared/LoadingSpinner/LoadingSpinner";
 
 const Details = () => {
   const [details, setDetails] = useState({});
@@ -13,26 +13,30 @@ const Details = () => {
   const detailsId = useParams().id;
 
   useEffect(() => {
-    fetch(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${detailsId}`, options)
+    fetch(
+      `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${detailsId}`,
+      options
+    )
       .then((response) => {
         if (!response.ok) throw new Error("fetch error details");
         return response.json();
       })
-      .then(detailsData => {
+      .then((detailsData) => {
         setIsLoading(false);
         setDetails(detailsData);
       })
-      .catch((error) => console.error(error.message))
-  }, [])
+      .catch((error) => console.error(error.message));
+  }, []);
 
-  if(isLoading) {
-    return <p>Loading...</p>
+  if (isLoading) {
+    return <LoadingSpinner />;
   }
 
   return (
     <section className={styles.details}>
       <header>
-        <img className={styles.img_hero}
+        <img
+          className={styles.img_hero}
           src={details.screenshots[0].image}
           alt={details.title}
         />
@@ -40,9 +44,11 @@ const Details = () => {
       <div className={styles.details_div}>
         <article className={styles.main}>
           <h2>{details.title}</h2>
-          <img className={styles.img_thumb}
+          <img
+            className={styles.img_thumb}
             src={details.thumbnail}
-            alt={details.title} />
+            alt={details.title}
+          />
           <div className={styles.general_informations}>
             <h3>Platform: {details.platform}</h3>
             <p className={styles.genre}>{details.genre}</p>
@@ -56,23 +62,27 @@ const Details = () => {
           <p>{details.description}</p>
         </article>
 
-        {details.screenshots[1] &&
-          <img className={styles.img}
+        {details.screenshots[1] && (
+          <img
+            className={styles.img}
             src={details.screenshots[1]?.image}
             alt={details.title}
           />
-        }
+        )}
 
-        {details.screenshots[2] &&
-          <img className={styles.img}
+        {details.screenshots[2] && (
+          <img
+            className={styles.img}
             src={details.screenshots[2]?.image}
             alt={details.title}
           />
-        }
+        )}
 
         <article className={styles.info}>
           <h3>Additional Information</h3>
-          <p className={styles.short_description}>{details.short_description}</p>
+          <p className={styles.short_description}>
+            {details.short_description}
+          </p>
           <div className={styles.info_div}>
             <h4>Developer</h4>
             <p>{details.developer}</p>
@@ -85,8 +95,7 @@ const Details = () => {
           </div>
         </article>
 
-        {details.minimum_system_requirements &&
-        
+        {details.minimum_system_requirements && (
           <article className={styles.system}>
             <div className={styles.headline_div}>
               <h3>Minimum System Requirements</h3>
@@ -114,7 +123,7 @@ const Details = () => {
               </div>
             </div>
           </article>
-        }
+        )}
       </div>
     </section>
   );

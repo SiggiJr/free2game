@@ -1,5 +1,5 @@
 .details {
-  background-color: #040F14;
+  background-color: #040f14;
   color: white;
   font-family: Oswald;
 
@@ -69,7 +69,7 @@
         background-color: #102130;
         padding: 6px 12px;
         border: 1px solid #ffe81e;
-        width: min-content;
+        width: max-content;
         border-radius: 15px;
         font-size: 1rem;
         margin-bottom: 36px;
@@ -216,9 +216,8 @@
     .headline_div {
       margin-top: 6px;
       margin-bottom: 34px;
-      margin-left: 106px; 
+      margin-left: 106px;
     }
-
 
     article {
       margin-bottom: 96px;
