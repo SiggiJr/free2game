@@ -1,12 +1,16 @@
 import styles from "./Details.module.scss";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { options } from "../../../assets/utils/api/api.js";
 import LoadingSpinner from "../../shared/LoadingSpinner/LoadingSpinner";
+import { GenreContext, PlatformContext, SortByContext } from "../../../App";
 
 const Details = () => {
   const [details, setDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const {platform, setPlatform} = useContext(PlatformContext)
+  const {genre, setGenre} = useContext(GenreContext)
+  const {sortBy, setSortBy} = useContext(SortByContext)
 
   const navigate = useNavigate();
 
@@ -27,6 +31,14 @@ const Details = () => {
       })
       .catch((error) => console.error(error.message));
   }, []);
+
+  console.log(platform);
+  const handleBack = () => {
+    navigate(-1)
+    setPlatform(platform)
+    setGenre(genre)
+    setSortBy(sortBy)
+  }
 
   if (isLoading) {
     return <LoadingSpinner />;
@@ -53,7 +65,7 @@ const Details = () => {
             <h3>Platform: {details.platform}</h3>
             <p className={styles.genre}>{details.genre}</p>
             <a href={details.game_url} target="blank" className={styles.playNow_btn}>PLAY NOW</a>
-            <button onClick={() => navigate(-1)} className={styles.playNow_btn}>BACK</button>
+            <button onClick={() => handleBack()} className={styles.playNow_btn}>BACK</button>
           </div>
         </article>
 
