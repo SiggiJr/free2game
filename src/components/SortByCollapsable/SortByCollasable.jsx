@@ -4,7 +4,7 @@ import styles from '../PlatformCollapsable/PlatformCollapsable.module.scss'
 
 
 const SortByCollapsable = ({options}) => {
-  const [isCollapsed, setIsCollapsed] = useState(true)
+  const [isCollapsed, setIsCollapsed] = useState(false)
 
   const handelCollapsable = () => {
     setIsCollapsed(!isCollapsed)

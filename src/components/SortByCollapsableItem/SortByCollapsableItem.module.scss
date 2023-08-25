@@ -1,5 +1,4 @@
 .div {
-  background-color: #102130;
   border-radius: 15px;
   display: flex;
   gap: 12px;
@@ -11,15 +10,23 @@
   padding-left: 24px;
   background-color: #375470;
   &:nth-of-type(1) {
-      margin-top: 18px;
+    margin-top: 18px;
   }
   &:last-of-type{
-      margin-bottom: 24px;
+    margin-bottom: 24px;
   }
 }
 
 .collapsable_items{
+  border-radius: 12px;
+  background-color: #102130;
+  width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 12px;
+  position: absolute;
+}
+
+.layout_wrapper{
+  position: relative;
 }
