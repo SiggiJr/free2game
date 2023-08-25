@@ -3,11 +3,11 @@
   display: flex;
   font-family: oswald;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
+  padding-top: 0.8rem;
 
   position: fixed;
   top: 0;
-  // padding: 10px;
   
   padding-inline: 24px;
   width: 100%;
@@ -17,7 +17,6 @@
         display: flex;
         gap: 18px;
         margin-left: 74px;
-        // justify-content: baseline;
         align-items: center;
 
         img {
@@ -41,7 +40,7 @@
         border-radius: 12px;
         border-style: none;
         height: 40px;
-        width: 277px;
+        width: 300px;
 
     h1 {
       font-size: 24px;
