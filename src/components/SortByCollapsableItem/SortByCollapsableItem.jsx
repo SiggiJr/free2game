@@ -6,7 +6,7 @@ const SortByCollapsableItem = ({options}) => {
   const {sortBy, setSortBy} = useContext(SortByContext)
 
   return ( 
-    <>
+    <div className={styles.layout_wrapper}>
     <div className={styles.collapsable_items}>
       {options.map(option => (
         <div key={option.value} className={styles.div}>
@@ -15,7 +15,7 @@ const SortByCollapsableItem = ({options}) => {
         </div>
       ))}
     </div>
-    </>
+    </div>
   );
 }
 

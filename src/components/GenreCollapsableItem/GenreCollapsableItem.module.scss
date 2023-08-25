@@ -1,12 +1,9 @@
-.genre_collapsable_item{
-  height: 282px;
-  color: #fff;
-  overflow-y: auto;
-
+.layout_wrapper{
+  width: 100%;
+  position: relative;
 }
 
 .div {
-  background-color: #102130;
   border-radius: 15px;
   display: flex;
   gap: 12px;
@@ -18,15 +15,24 @@
   padding-left: 24px;
   background-color: #375470;
   &:nth-of-type(1) {
-      margin-top: 18px;
+    margin-top: 18px;
   }
   &:last-of-type{
-      margin-bottom: 24px;
+    margin-bottom: 24px;
   }
 }
 
 .item_wrapper{
-  max-height: 270px;
+  height: 282px;
+  color: #fff;
+  background-color: #102130;
+  width: 100%;
+  position: absolute;
+  border-radius: 12px;
+}
+
+.hide_overflow{
+  height: 270px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;

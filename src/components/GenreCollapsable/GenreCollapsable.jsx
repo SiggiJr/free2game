@@ -12,10 +12,10 @@ const GenreCollapsable = ({options}) => {
 
   return ( 
     <div className={styles.collapsable_wrapper}>
-    <div className={styles.collapsable} onClick={() => handelCollapsable()}>
-      <p>{options[0]}</p>
-      <p className={isCollapsed ? "" : styles.v}>V</p>
-    </div>
+      <div className={styles.collapsable} onClick={() => handelCollapsable()}>
+          <p>{options[0]}</p>
+          <p className={isCollapsed ? "" : styles.v}>V</p>
+      </div>
     {isCollapsed ? "" : <GenreCollapsableItem options={options[1]}/>}
     </div>
   );

@@ -12,13 +12,15 @@ const PlatformCollapsable = ({options}) => {
 
   return ( 
     <div className={styles.collapsable_wrapper}>
-    <div className={styles.collapsable} onClick={() => handelCollapsable()}>
-      <p>{options[0]}</p>
-      <p className={isCollapsed ? "" : styles.v}>V</p>
-    </div>
-    <div className={styles.collapsable_items}>
-    {isCollapsed ? "" : <CollapsableItem options={options[1]}/>}
-    </div>
+      <div className={styles.collapsable} onClick={() => handelCollapsable()}>
+        <p>{options[0]}</p>
+        <p className={isCollapsed ? "" : styles.v}>V</p>
+      </div>
+      <div className={styles.collapsable_items}>
+        <div className={styles.layout_wrapper}>
+          {isCollapsed ? "" : <CollapsableItem options={options[1]}/>}
+        </div>
+      </div>
     </div>
   );
 }
