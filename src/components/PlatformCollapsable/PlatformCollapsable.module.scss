@@ -7,6 +7,10 @@
   border-radius: 10px;
   display: flex;
 
+  padding: 0 24px;
+  min-height: 2.2rem;
+  align-items: center;
+
   &:hover {
     cursor: pointer;
   }

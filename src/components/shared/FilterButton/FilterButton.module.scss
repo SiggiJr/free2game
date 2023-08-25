@@ -1,13 +1,19 @@
-.filter_button{
+.filter_button {
   color: #fff;
   display: flex;
   column-gap: 12px;
   font-family: Oswald;
-font-size: 16px;
-font-weight: 500;
-width: fit-content;
-padding-inline: 12px;
-padding-block: 6px;
-border: 1px solid #ffe81e;
-border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  width: fit-content;
+  padding-inline: 12px;
+  padding-block: 6px;
+  border: 1px solid #ffe81e;
+  border-radius: 12px;
+
+  span {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
