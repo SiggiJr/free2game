@@ -19,7 +19,6 @@ const FilterButtons = () => {
   return ( 
     <div className={styles.filter_buttons_wrapper}>
     {allFilters.map((filter, index) => <FilterButton key={index} filter={filter} index={index}/>)}
-    <p>Test</p>
     </div>
   );
 }
