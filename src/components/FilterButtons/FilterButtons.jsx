@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { GenreContext } from "../../App";
 import FilterButton from "../shared/FilterButton/FilterButton";
+import styles from './FilterButtons.module.scss'
 
 
 const FilterButtons = () => {
@@ -16,7 +17,7 @@ const FilterButtons = () => {
 
 
   return ( 
-    <div style={{marginLeft: "10rem"}}>
+    <div className={styles.filter_buttons_wrapper}>
     {allFilters.map((filter, index) => <FilterButton key={index} filter={filter} index={index}/>)}
     <p>Test</p>
     </div>
