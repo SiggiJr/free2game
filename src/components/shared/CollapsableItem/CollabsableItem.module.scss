@@ -1,26 +1,23 @@
 .div {
-border: 1px solid red;
     background-color: #102130;
     border-radius: 15px;
     display: flex;
-    align-items: flex-start;
-    flex-direction: column;
+    // align-items: flex-start;
+    // flex-direction: column;
     gap: 12px;
+    margin-inline: auto;
 
-    padding: 0px 12px 24px 12px;
+    // padding: 0px 12px 24px 12px;
     width: 285px;
-
-    .inputs {
-border: 1px solid green;
-        background-color: #375470;
-        border-radius: 12px;
-
-        padding: 12px 24px;
+    font-size: 1.125rem;
+    align-items: center;
+    padding-block: 12px;
+    padding-left: 24px;
+    background-color: #375470;
+    &:nth-of-type(1) {
+        margin-top: 18px;
     }
-    .label {
-border: 1px solid violet;
+    &:last-of-type{
+        margin-bottom: 24px;
     }
-}
-.inputs[type=checkbox] {
-    border: 1px solid blue;
 }
