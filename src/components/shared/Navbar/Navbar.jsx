@@ -6,12 +6,13 @@ import AllGamesIcon from "../../../assets/img/AllGamesIcon.svg";
 import RecentlyAddedIcon from "../../../assets/img/RecentlyAddedIcon.svg";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
-import { PlatformContext, SortByContext } from "../../../App";
+import { GenreContext, PlatformContext, SortByContext } from "../../../App";
 
 const Navbar = ({isNavOpen, setIsNavOpen}) => {
 
   const {platform, setPlatform} = useContext(PlatformContext)
   const {sortBy, setSortBy} = useContext(SortByContext)
+  const {genre, setGenre} = useContext(GenreContext)
 
   const toggleNav = () => {
     if (isNavOpen) {
@@ -53,7 +54,11 @@ const Navbar = ({isNavOpen, setIsNavOpen}) => {
           <div>
             <NavLink
               to={"/"}
-              className={({ isActive }) => (isActive ? `${style.active}` : "")}>
+              className={({ isActive }) => (isActive ? `${style.active}` : "")}
+              onClick={() => {
+                setGenre([])
+              }}
+              >
               <img
                 className={style.nav_icons_home}
                 src={HomeIcon}
@@ -67,6 +72,7 @@ const Navbar = ({isNavOpen, setIsNavOpen}) => {
               onClick={() => {
                 setPlatform("all")
                 setSortBy("relevance")
+                setGenre([])
               }}>
               <img
                 className={style.nav_icons_all_games}
@@ -77,7 +83,11 @@ const Navbar = ({isNavOpen, setIsNavOpen}) => {
             </NavLink>
             <NavLink
               to={"/recentlyadded"}
-              className={({ isActive }) => (isActive ? `${style.active}` : "")}>
+              className={({ isActive }) => (isActive ? `${style.active}` : "")}
+              onClick={() => {
+                setGenre([])
+              }}
+              >
               <img
                 className={style.nav_icons_recently_added}
                 src={RecentlyAddedIcon}

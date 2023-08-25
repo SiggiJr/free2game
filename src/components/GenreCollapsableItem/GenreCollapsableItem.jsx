@@ -27,7 +27,7 @@ const GenreCollapsableItem = ({options}) => {
         <div className={style.hide_overflow}>
           {options.map(option => (
             <div key={option.value} className={style.div}>
-              <input type="checkbox" name={option.value} id={option.value} onChange={(event) => handleGenre(event)} value={option.value} />
+              <input type="checkbox" name={option.value} id={option.value} onChange={(event) => handleGenre(event)} value={option.value} checked={genre.includes(option.value)}/>
               <label htmlFor={option.value}>{option.label}</label>
           </div>
       ))}
