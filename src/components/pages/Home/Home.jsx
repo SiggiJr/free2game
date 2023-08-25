@@ -1,6 +1,7 @@
 import styles from "./Home.module.scss";
 import ListItem from "../../shared/ListItem/ListItem";
 import HomeItem from "../../shared/HomeItem/HomeItem";
+import LoadingSpinner from "../../shared/LoadingSpinner/LoadingSpinner";
 import Button from "../../shared/Button/Button";
 import gridStyle from "../../../modules/Grid.module.scss";
 import { useEffect, useState } from "react";
@@ -13,10 +14,12 @@ const Home = () => {
   const [topAddedGames, setTopAddedGames] = useState([]);
   const [topPcGames, setTopPcGames] = useState([]);
   const [topBrowserGames, setTopBrowserGames] = useState([]);
+  const [bestPCGame, setBestPCGame] = useState({});
 
-  // const [bestPCGame, setBestPCGame] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true)
     Promise.all([
       getGamesByFilter(`games?sort-by=release-date`),
       getGamesByFilter(`games?sort-by=popularity&platform=pc`),
@@ -26,23 +29,28 @@ const Home = () => {
         setTopAddedGames(gamesDataArray[0].slice(0, 4))
         setTopPcGames(gamesDataArray[1].slice(0, 4))
         setTopBrowserGames(gamesDataArray[2].slice(0, 4))
+        
+        return gamesDataArray[1][0];
       })
-      // .then(
-      //   console.log(topPcGames[0].id)
-      //   fetch(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${topPcGames[0].id}`, options)
-      //     .then((response) => {
-      //       if (!response.ok) throw new Error("fetch error details");
-      //       return response.json();
-      //     })
-      //     .then(detailsData => {
-      //       console.log(detailsData)
-      //       setBestPCGame(detailsData);
-      //     })
-      // )
+      .then((topPcGame) => {
+          fetch(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${topPcGame.id}`, options)
+            .then((response) => {
+              if (!response.ok) throw new Error("fetch error details");
+              return response.json();
+            })
+            .then(detailsData => {
+              setBestPCGame(detailsData);
+              setIsLoading(false)
+            })
+      })
       .catch((error) => console.error(error.message))
   }, []);
 
   const currentMonth = new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" });
+
+  if(isLoading){
+    return <LoadingSpinner />
+  }
 
   return (
     <section className={styles.home}>
@@ -72,7 +80,7 @@ const Home = () => {
           Top 4 PC-Games in {currentMonth}
         </h3>
         <div className={styles.home_top_games_pc_list}>
-          {/* {<TopGamesItem
+          {<TopGamesItem
             key={bestPCGame.id}
             game={bestPCGame}
           />}
@@ -83,21 +91,7 @@ const Home = () => {
               game={game}
               />
               : null
-          ))} */}
-          {topPcGames.map((game, index) => {
-            return (
-              index === 0
-                ? <TopGamesItem
-                  key={game.id}
-                  game={game}
-                />
-                : <TopGamesItemNext
-                  key={game.id}
-                  game={game}
-                />
-            )
-          }
-          )}
+          ))}
         </div>
         <div className={styles.home_button_align_right}>
           <Button

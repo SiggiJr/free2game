@@ -20,7 +20,7 @@ const HomeItem = ({ game }) => {
       <div className={style.home_item_short_description}>{game.short_description}</div>
       <div className={style.home_item_button}>
         <Button
-          title={"Read More"}
+          title={"READ MORE"}
           path={`game/${game.id}`}
         />
       </div>

@@ -22,16 +22,18 @@ const GenreCollapsableItem = ({options}) => {
   }
 
   return ( 
-    <>
-    <div className={style.genre_collapsable_item} style={{color: "white"}}>
-      {options.map(option => (
-        <div key={option.value}>
-          <input type="checkbox" name={option.value} id={option.value} onChange={(event) => handleGenre(event)} value={option.value} />
-          <label htmlFor={option.value}>{option.label}</label>
-        </div>
+      <div className={style.layout_wrapper}>
+      <div className={style.item_wrapper}>
+        <div className={style.hide_overflow}>
+          {options.map(option => (
+            <div key={option.value} className={style.div}>
+              <input type="checkbox" name={option.value} id={option.value} onChange={(event) => handleGenre(event)} value={option.value} checked={genre.includes(option.value)}/>
+              <label htmlFor={option.value}>{option.label}</label>
+          </div>
       ))}
+      </div>
+      </div>
     </div>
-    </>
   );
 }
 

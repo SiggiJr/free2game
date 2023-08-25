@@ -1,8 +1,3 @@
-.layout_wrapper{
-  width: 100%;
-  position: relative;
-}
-
 .div {
   border-radius: 15px;
   display: flex;
@@ -22,19 +17,16 @@
   }
 }
 
-.item_wrapper{
-  height: 282px;
-  color: #fff;
+.collapsable_items{
+  border-radius: 12px;
   background-color: #102130;
   width: 100%;
-  position: absolute;
-  border-radius: 12px;
-}
-
-.hide_overflow{
-  height: 270px;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   row-gap: 12px;
+  position: absolute;
+}
+
+.layout_wrapper{
+  position: relative;
 }

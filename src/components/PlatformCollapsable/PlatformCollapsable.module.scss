@@ -1,5 +1,4 @@
 .collapsable{
-  // color: white;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -10,12 +9,8 @@
 }
 
 .collapsable_wrapper{
-  display: flex;
-  flex-direction: column;
   background-color: #102130;
   margin-top: 96px;
-  // padding-bottom: 24px;
-  border-radius: 12px;
 }
 
 .v{
@@ -23,7 +18,15 @@
 }
 
 .collapsable_items{
+  position: relative;
+}
+
+.layout_wrapper{
   display: flex;
   flex-direction: column;
+  background-color: #102130;
   row-gap: 12px;
+  width: 100%;
+  border-radius: 12px;
+  position: absolute;
 }

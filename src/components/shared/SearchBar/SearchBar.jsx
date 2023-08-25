@@ -1,6 +1,6 @@
 import logo from "../../../assets/img/favicon.svg";
 import styles from "./SearchBar.module.scss";
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import { getGamesByFilter } from "../../../assets/utils/api/api";
 import SearchItem from "../SearchItem/SearchItem";
@@ -9,6 +9,12 @@ const SearchBar = ({isNavOpen}) => {
   const [games, setGames] = useState([]);
   const [gamesFound, setGamesFound] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+
+  const location = useLocation().pathname;
+
+  useEffect(()=> {
+    setSearchInput("")
+  }, [location])
 
   useEffect(() => {
     getGamesByFilter("games")

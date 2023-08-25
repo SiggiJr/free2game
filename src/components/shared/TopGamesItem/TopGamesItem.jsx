@@ -7,8 +7,7 @@ import { Link } from "react-router-dom";
 
 const TopGamesItem = ({ game }) => {
   const inlineImage = {
-    backgroundImage: `url(${game.thumbnail})`,
-    // backgroundImage: `url(${game.screenshots[0].image})`,
+    backgroundImage: `url(${game.screenshots[0].image})`,
   };
 
   const platformIcon = (
