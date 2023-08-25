@@ -5,6 +5,7 @@
 .all-games {
   background-color: #040F14;
   margin-left: 74px;
+  min-height: 112vh;
 
   .hero {
     background-color: #040F14;
@@ -49,4 +50,10 @@
     margin-bottom: 50px;
   }
 
+}
+.error_message{
+  color: #fff;
+  text-align: center;
+  font-family: Oswald;
+  font-size: 2.5rem;
 }

@@ -38,11 +38,11 @@ const AllGames = () => {
 
   useEffect(() => {
     if (filter !== "") {
-      console.log(filter);
-      console.log(platform);
-      console.log(sortBy);
       getGamesByFilter(filter)
-        .then((gamesData) => setGames(gamesData))
+        .then((gamesData) => {
+          console.log(gamesData);
+          setGames(gamesData)
+        })
         .then(setIsLoading(false));
     }
   }, [filter]);
@@ -110,7 +110,7 @@ const AllGames = () => {
       {/* {genre.map((genre, index) => <FilterButton key={index} genre={genre} index={index}/>)} */}
       <FilterButtons />
 
-      <div className={styles.grid_div}>
+      {games.status === 0 ? <h1 className={styles.error_message}>No Results Found</h1> : <div className={styles.grid_div}>
         <div className={gridStyle["list-wrapper"]}>
           {games.map((game) => {
             return (
@@ -121,7 +121,20 @@ const AllGames = () => {
             );
           })}
         </div>
-      </div>
+      </div>}
+
+      {/* <div className={styles.grid_div}>
+        <div className={gridStyle["list-wrapper"]}>
+          {games.map((game) => {
+            return (
+              <ListItem
+                key={game.id}
+                game={game}
+              />
+            );
+          })}
+        </div>
+      </div> */}
     </section>
   );
 };
