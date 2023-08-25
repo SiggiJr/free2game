@@ -1,13 +1,14 @@
 import styles from "./Details.module.scss";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { data2 } from "../../../assets/utils/data/data.js";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { options } from "../../../assets/utils/api/api.js";
 
 const Details = () => {
   const [details, setDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+
+  const navigate = useNavigate();
 
   const detailsId = useParams().id;
 
@@ -46,6 +47,7 @@ const Details = () => {
             <h3>Platform: {details.platform}</h3>
             <p className={styles.genre}>{details.genre}</p>
             <a href={details.game_url} target="blank" className={styles.playNow_btn}>PLAY NOW</a>
+            <button onClick={() => navigate(-1)} className={styles.playNow_btn}>BACK</button>
           </div>
         </article>
 
