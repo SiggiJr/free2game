@@ -16,4 +16,11 @@
     &:last-of-type{
         margin-bottom: 24px;
     }
+
+    input,
+    label {
+      &:hover {
+        cursor: pointer;
+      }
+    }
 }

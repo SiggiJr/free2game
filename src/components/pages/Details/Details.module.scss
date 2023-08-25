@@ -73,6 +73,10 @@
         border-radius: 15px;
         font-size: 1rem;
         margin-bottom: 36px;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       .playNow_btn {
@@ -84,6 +88,10 @@
         border: transparent;
         font-size: 1.2rem;
         width: 115px;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       button {
