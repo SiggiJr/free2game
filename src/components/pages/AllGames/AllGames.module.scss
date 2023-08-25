@@ -37,15 +37,16 @@
     }
   }
   .list-controls {
-    //color: white;
     font-family: Oswald;
-    display: flex;
+    display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+  margin-right: 74px;
+  align-items: flex-start;
 
-    margin-left: 90px;
+    margin-left: 80px;
     margin-bottom: 50px;
   }
 
-  .grid_div {
-    // margin-left: 74px;
-  }
 }

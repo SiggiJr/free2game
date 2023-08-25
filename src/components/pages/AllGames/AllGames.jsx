@@ -10,7 +10,6 @@ import PlatformCollapsable from "../../PlatformCollapsable/PlatformCollapsable";
 import GenreCollapsable from "../../GenreCollapsable/GenreCollapsable";
 import SortByCollapsable from "../../SortByCollapsable/SortByCollasable";
 import FilterButtons from "../../FilterButtons/FilterButtons";
-import FilterButton from "../../shared/FilterButton/FilterButton";
 
 const AllGames = () => {
   const [games, setGames] = useState([]);

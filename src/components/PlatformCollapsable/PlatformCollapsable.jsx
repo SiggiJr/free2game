@@ -4,7 +4,7 @@ import styles from './PlatformCollapsable.module.scss'
 
 const PlatformCollapsable = ({options}) => {
   
-  const [isCollapsed, setIsCollapsed] = useState(true)
+  const [isCollapsed, setIsCollapsed] = useState(false)
 
   const handelCollapsable = () => {
     setIsCollapsed(!isCollapsed)
@@ -16,7 +16,9 @@ const PlatformCollapsable = ({options}) => {
       <p>{options[0]}</p>
       <p className={isCollapsed ? "" : styles.v}>V</p>
     </div>
+    <div className={styles.collapsable_items}>
     {isCollapsed ? "" : <CollapsableItem options={options[1]}/>}
+    </div>
     </div>
   );
 }
