@@ -22,7 +22,7 @@ const SearchBar = ({isNavOpen}) => {
         setGames(gamesData)
         const result = [...games].filter((game) => {
           return game.title.toLowerCase().includes(searchInput.toLowerCase());
-        }).slice(0, 10);
+        });
         setGamesFound(result)
       });
   }, [searchInput]);
@@ -47,7 +47,7 @@ const SearchBar = ({isNavOpen}) => {
           onChange={(event) => setSearchInput(event.target.value)}
           value={searchInput}
         />
-        <div>
+        <div className={styles.item_wrapper}>
           {searchInput &&
             gamesFound.map((game) => (
               <SearchItem

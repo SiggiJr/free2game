@@ -3,15 +3,19 @@ import style from "./HomeItem.module.scss";
 import IconWindows from "../../../assets/img/icon_windows.png";
 import IconBrowser from "../../../assets/img/icon_browser.png";
 import { Link } from "react-router-dom";
-// import { useContext } from "react";
-// import { PlatformContext } from "../../../App";
+import { useContext } from "react";
+import { GenreContext, PlatformContext, SortByContext } from "../../../App";
 
 const HomeItem = ({ game }) => {
   const platformIcon = (
     <img src={game.platform === "PC (Windows)" ? IconWindows : IconBrowser} />
   );
 
-  // const {platform, setPlatform} = useContext(PlatformContext)
+  const {platform, setPlatform} = useContext(PlatformContext)
+  const {genre, setGenre} = useContext(GenreContext)
+  const {sortBy, setSortBy} = useContext(SortByContext)
+
+  console.log(game.genre);
 
   return (
     <section className={style.home_item}>
@@ -32,13 +36,22 @@ const HomeItem = ({ game }) => {
         <Link
           to="/allgames"
           className={style.home_item_platform}
-          // onClick={setPlatform("browser")}
+          onClick={() => {
+            setPlatform(game.platform === "PC (Windows)" ? "pc" : "browser")
+            setSortBy("relevance")
+          }}
           >
           {platformIcon}
         </Link>
         <Link
           to="/allgames"
-          className={style.home_item_genre}>
+          className={style.home_item_genre}
+          onClick={() => {
+            setPlatform("all")
+            setGenre([`${game.genre.toLowerCase()}`])
+            setSortBy("relevance")
+          }}
+          >
           {game.genre}
         </Link>
       </div>
